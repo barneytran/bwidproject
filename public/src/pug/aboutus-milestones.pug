@@ -1,0 +1,53 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'milestones';
+block content
+    +bgImg(imgDataPath + 'BWID-About-Our-Company.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='#') Home
+                        li.breadcrumb-item
+                            a(href='#') About us 
+                        li.breadcrumb-item.active(aria-current='page') Milestones
+    section.mainContact
+        .container
+            h1.titleHeading(data-waypoint="100%") Milestones
+            .timeline(data-waypoint="100%")
+                .timeline__item
+                    .timeline__year
+                        span 2018
+                    .timeline__item__content
+                        i.ic-dot
+                        .timeline__item__content__des.d-flex
+                            .date 15 May
+                            .info Official Launch
+                    .timeline__item__content
+                        i.ic-dot
+                        .timeline__item__content__des.d-flex
+                            .date 23 January
+                            .info BW Industrial
+                            .ml-auto
+                                .innerlogo
+                                    img(src=imgDataPath + "aboutus/fund-logo-3.png" alt="")
+                .timeline__item
+                    .timeline__year
+                        span 2017
+                    .timeline__item__content
+                        i.ic-dot
+                        .timeline__item__content__des.d-flex
+                            .date 19 September 
+                            .info MOU signed between <strong>Warburg Pincus & Becamex</strong>
+                            .ml-auto
+                                .innerlogo
+                                    img(src=imgDataPath + "aboutus/fund-logo-4.png" alt="")
+                                    img(src=imgDataPath + "aboutus/fund-logo-5.png" alt="")
+                            
+
+                

@@ -1,0 +1,183 @@
+.listTeam{
+    @include media-breakpoint-up(lg) {
+        >.row{
+            margin-left:rem(-40);
+            margin-right:rem(-40);
+            [class*="col-"] {
+                padding-left:rem(40);
+                padding-right:rem(40);
+            }
+        }
+    }
+    
+    &__item{
+        display: table;
+        width: 100%;
+        height: 100%;
+        border-top: 1px solid #ebebeb;
+        margin-bottom: rem(45);
+        margin-top: rem(45);
+        @include transition();
+        @include media-breakpoint-down(lg) {margin-bottom: rem(10);
+            margin-top: rem(10);}
+            @media (max-width:480px) {
+               padding-top:rem(20);}
+        
+        &:hover{
+            border-color:$color-active;
+        }
+        >div{
+            display:table-cell;
+            vertical-align: top;
+            @include media-breakpoint-down(xs) {
+                display:block;
+            }
+        }
+        .image{
+            width:175px;
+            margin:0 auto;
+            >a{
+                @include bg-box(175,175);
+            }
+        }
+        .info{
+            padding-left:rem(40);
+            padding-top:rem(20);
+            @include media-breakpoint-down(xs) {
+                padding-left:rem(0);
+            }
+            h4{
+                font-size:rem(16);
+                font-weight:800;
+                letter-spacing: 0.75px;
+                color:$color-active;
+                font-family:$font-custom;
+                margin:0;
+                padding:0 0 rem(12) 0px;
+                >a{
+                    color:inherit;
+                }
+            }
+            h5{
+                color:$color-hover;
+                font-size:rem(14);
+                margin:0;
+                padding:0;
+                font-weight: normal;
+            }
+            p{
+                line-height:(28/16);
+                height:(28/16)*3em;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                text-align: justify;
+                overflow: hidden;
+                margin:0;
+                @include media-breakpoint-down(md) {
+                    max-height:(28/16)*3em;
+                    height:unset;
+                }
+                
+            }
+            .btn-link.btn-gray{
+                font-size: rem(12);
+                padding-top: rem(6);
+                display: inline-block;
+                .ic-link{
+                    top: 7px;
+                    &:after,&:before{
+                        background-size: 50%;
+                    }
+                }
+            }
+        }
+    
+    }
+}
+.modal-open{
+    .teamModal.modal{
+        z-index: 9999;
+    }
+}
+.teamModal{
+    display:block!important;    z-index: -1;
+    
+    .modal-dialog{
+        max-width:1180px;
+        .modal-content {
+            background: #e6e6e6 url($image-path + "bg-popup.png") no-repeat right bottom ;
+            border-radius: 0;
+            border: none;
+            padding: rem(60);
+        }
+        .btn-close{
+            background:#cccccc;
+            width:rem(50);
+            height:rem(50);
+            outline: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+            i.ic-close{
+                background:url($image-path + "icons/arrow-3.svg") no-repeat;
+                display:block;    background-size: contain;
+                width:rem(21);
+                height:rem(21);    margin: 0 auto;
+                
+            }
+        }
+    }
+
+}
+.teamSlide{
+    &__item{
+        display: table!important;
+        width: 100%;
+        @include transition();
+      
+        >div{
+            display:table-cell;
+            vertical-align: top;
+            @include media-breakpoint-down(md) {
+                display:block;
+            }
+            
+        }
+        .image{
+            width:310px;
+            margin:0 auto;
+            @include bg-box(310,310);
+            @media (max-width:480px) {
+                width:auto;
+            }
+        }
+        .info{
+            padding-left:rem(60);
+            @include media-breakpoint-down(md) {
+                padding-left:rem(0);    margin-top: rem(20);
+            }
+            h4{
+                font-size:rem(24);
+                font-weight:800;
+                letter-spacing: 0.75px;
+                color:$color-active;
+                font-family:$font-custom;
+                margin:0;
+                padding:0 0 rem(12) 0px;
+               
+            }
+            h5{
+                color:$color-hover;
+                font-size:rem(14);
+                margin:0;
+                padding:0 0 rem(20) 0px;
+                font-style:italic;
+            }
+            p{
+                line-height:(28/16);
+            }
+        }
+    }
+}

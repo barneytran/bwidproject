@@ -1,0 +1,30 @@
+.homeSliderWrapper
+    .homeSlider
+        .homeSlider__image
+            +bgImg(imgDataPath + 'slider/slider-01.jpg','image')
+            +bgImg(imgDataPath + 'slider/slider-full.jpg','imageFull')
+            //- .imageFull
+            //-     img(src=imgDataPath + 'slider/slider-full.jpg' )
+            .homeSlider__info
+                .container
+                    .table-cell
+                        .homeSlider__des
+                            h3 
+                                span Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            a(href="#").btn-link
+                                | LEARN MORE
+                                i.ic-link
+        .homeSlider__image
+            +bgImg(imgDataPath + 'slider/slider-01.jpg','image')
+            +bgImg(imgDataPath + 'slider/slider-full.jpg','imageFull')
+            .homeSlider__info
+                .container
+                    .table-cell
+                        .homeSlider__des
+                            h3: span Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            a(href="#").btn-link
+                                | LEARN MORE
+                                i.ic-link
+                                    

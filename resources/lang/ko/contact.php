@@ -1,0 +1,46 @@
+<?php
+return [
+    'form_title'=> '우리에게 이메일 보내기',
+    'name'=> '성명',
+    'phone'=> '전화 번호',
+    'tel'=> '전화',
+    'email'=> '이메일',
+    'address'=> '주소',
+    'address_info'=> '주소 정보',
+    'content'=> '메시지',
+    'business_team'=> '비즈니스 팀',
+    'marketing_team'=> '마케팅 팀',
+    'send_us_message'=> 'US A 메시지 보내기',
+    'send_us_message_description'=> '제안이나 지원이 있으면 여기에 메세지를 남겨주세요!',
+    'company'=> '회사 이름',
+    'company_profile'=> '자세한 내용은 Google에 문의하십시오.',
+    'information'=> '정보',
+    'anlacgiao_company'=> 'Lac Giao Service Company Limited',
+    'enter_name'=> '이름 입력',
+    'enter_telephone'=> '전화 입력',
+    'enter_company'=> '회사 입력',
+    'enter_subject'=> '주제 입력',
+    'enter_message'=> '메시지 입력 ...',
+    'note'=> '메모',
+    'note_description'=> '请在 :min  - :max 字符之间输入。',
+
+    'inquiry'=> '문의',
+    'enquiries'=> '문의',
+    'how_did_you_hear_about_us'=> '우리에 대해 어떻게 알게 되었습니까?',
+    'project_interested_in'=> '관심이있는 프로젝트?',
+
+    'full_name'=> '성명',
+    'message'=> '메시지',
+    'first_name'=> '이름 입력',
+    'last_name'=> '성 입력',
+    'country'=> '국가 입력',
+    'requirement_detail'=> '요구 사항 세부 사항',
+    'register_next'=> 'Empire City의 다음 단계 발매시에 업데이트하고 싶습니다.',
+
+    'find_us'=> '우리를 찾는다',
+    'sales_office'=> '영업 사무소',
+    'show_units_office'=> 'Empire City Sales Gallery 쇼 유닛',
+
+    'contact_person'=> '연락 담당자',
+    'email_us'=> '이메일 문의'
+];

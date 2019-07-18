@@ -1,0 +1,94 @@
+// Base ----------------------------------------------------------------
+@import "base/functions";
+@import "base/variables";
+@import "base/mixins";
+@import "base/root";
+@import "base/reboot";
+@import "base/type";
+@import "base/utilities";
+
+// End Base ------------------------------------------------------------
+
+// Start component -----------------------------------------------------
+@import "components/images";
+@import "components/code";
+@import "components/grid";
+@import "components/tables";
+@import "components/forms";
+@import "components/icons";
+@import "components/buttons";
+@import "components/transitions";
+@import "components/dropdown";
+@import "components/button-group";
+@import "components/input-group";
+@import "components/custom-forms";
+@import "components/nav";
+@import "components/navbar";
+@import "components/card";
+@import "components/breadcrumb";
+@import "components/pagination";
+@import "components/badge";
+@import "components/jumbotron";
+@import "components/alert";
+@import "components/progress";
+@import "components/media";
+@import "components/list-group";
+@import "components/close";
+@import "components/modal";
+@import "components/tooltip";
+@import "components/popover";
+@import "components/carousel";
+@import "components/print";
+@import "components/fonts";
+
+// End component -------------------------------------------------------
+
+// Start Modules -------------------------------------------------------
+    @import "modules/headings";
+    @import "modules/menu";
+    @import "modules/slick";
+    @import "modules/animate";
+    @import "modules/breadcrumb";
+    @import "modules/bootstrapselect";
+    @import "modules/variables";
+    @import "modules/pagination";
+    @import "modules/projectFeatures";
+    @import "modules/projectPictures";
+    @import "modules/projectLocation";
+    @import "modules/effect";
+    @import "modules/team";
+    @import "modules/newsphoto";
+    //@import "modules/jquery.simplyscroll";
+    //@import "modules/liMarquee";
+    //@import "modules/owl.carousel.min";
+    @import "modules/slidephoto";
+    @import "modules/case-studies";
+    @import "modules/accordion";
+    @import "modules/chart";
+
+    // End Modules ---------------------------------------------------------
+    
+
+// Start Tempmlate
+    @import "template/header";
+    @import "template/main";
+    @import "template/footer";
+// End Tempmlate
+  
+
+// Start Page  ---------------------------------------------------------
+    @import "pages/home";
+    @import "pages/contact";  
+    @import "pages/propertyType"; 
+    @import "pages/businessModel"; 
+    @import "pages/aboutus";  
+    @import "pages/search";  
+    @import "pages/timeline";  
+    @import "pages/comming";
+    @import "pages/ourPrecense";
+    @import "pages/news";
+    @import "pages/career";
+    @import "pages/leasing";
+    @import "pages/sitemap";
+
+// End Page ------------------------------------------------------------

@@ -1,0 +1,229 @@
+// stylelint-disable selector-no-qualifying-type
+
+//
+// Base styles
+//
+
+.btn {
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: $btn-border-width solid transparent;
+  
+  @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
+  @include transition($btn-transition);
+
+  // Share hover and focus styles
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    //box-shadow: $btn-focus-box-shadow;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: $btn-disabled-opacity;
+    @include box-shadow(none);
+  }
+
+  // Opinionated: add "hand" cursor to non-disabled .btn elements
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    background-image: none;
+    @include box-shadow($btn-active-box-shadow);
+
+    &:focus {
+      @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+    }
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset:disabled a.btn {
+  pointer-events: none;
+}
+
+
+//
+// Alternate buttons
+//
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}
+
+
+//
+// Link buttons
+//
+
+// Make a button look and behave like a link
+.btn-link {
+  font-weight: $font-weight-normal;
+  color: $link-color;
+  background-color: transparent;
+
+  @include hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &:focus,
+  &.focus {
+    text-decoration: $link-hover-decoration;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $btn-link-disabled-color;
+    pointer-events: none;
+  }
+
+  // No need for an active state here
+}
+
+
+//
+// Button Sizes
+//
+
+.btn-lg {
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+}
+
+.btn-sm {
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+}
+
+
+//
+// Block button
+//
+
+.btn-block {
+  display: block;
+  width: 100%;
+
+  // Vertically space out multiple block buttons
+  + .btn-block {
+    margin-top: $btn-block-spacing-y;
+  }
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+.btn-submit{
+  font-family: 'Futura';
+  font-weight: 800;
+  //height: rem(50);
+  width: 100%;
+  border-radius: 0;
+  color: #ffffff;
+  background-color: #00a8df;
+  letter-spacing: (75/1000)*1rem;
+  font-size: rem(14);
+  text-transform: uppercase;
+  padding-left: rem(20);
+  text-align: center;
+  position: relative;
+  line-height:1;
+  line-height: 1;
+  padding: rem(17) rem(2);
+  @include transition();
+  &:hover{
+    background-color: $color-active;
+  }
+  .icon{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 20px;
+    font-size: rem(20);
+  }
+
+}
+
+// effect
+// .btn-submit{
+//   font-family: 'Futura';
+//   font-weight: 800;
+//   height: rem(50);
+//   width: 100%;
+//   background: none;
+//   border-radius: 0;
+//   color: $color-btnsubmit;
+//   border: 1px solid $color-btnsubmit;
+//   // background-color: $white;
+//   letter-spacing: (75/1000)*1rem;
+//   font-size: rem(14);
+//   text-transform: uppercase;
+//   padding-left: rem(20);
+//   text-align: left;
+//   position: relative;
+//   &::before{
+//     position: absolute;
+//     content: '';
+//     top:0;
+//     left: 0;
+//     width: 0;
+//     height: 100%;
+//     background-color: $color-btnsubmit;
+//     transform-origin:left;
+//     transition:width 0.25s ease;
+//     z-index:-1;
+//     @include transition(0.3s all);
+//   }
+//   &:hover{
+//     @include transition(0.3s all);
+//     color: $white;
+//     &::before{
+//       width: 100%;
+//     }
+//     .icon{
+//       color: $white;
+//     }
+//   }
+//   .icon{
+//     @include transition(0.3s all);
+//     position: absolute;
+//     top: 50%;
+//     transform: translate(0, -50%);
+//     right: 20px;
+//     font-size: rem(20);
+//     color: $color-btnsubmit;
+//   }
+//   @media (max-width: 991.98px){
+//     margin-top: rem(20);
+//   }
+// }

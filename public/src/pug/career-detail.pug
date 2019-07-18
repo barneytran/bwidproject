@@ -1,0 +1,162 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'career-2';
+block content
+    +bgImg(imgDataPath + 'career/bg-career-model-3.jpg','bgBanner bgBanner--news')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='/') Careers  
+                        li.breadcrumb-item
+                            a(href='/') Current Openings  
+                        li.breadcrumb-item.active(aria-current='page') Planning manager
+    section.ourCareer
+        .container
+            .titleHeading.titleHeading--content(data-waypoint="100%")
+                h1 Planning manager
+                ul.career-link
+                    li
+                        i.fa.fa-briefcase
+                        span <strong>Department</strong>: Bussiness
+                    li
+                        i.fa.fa-map-marker
+                        span <strong>Location</strong>: Hanoi
+                    li
+                        i.fa.fa-calendar
+                        span <strong>Expired date</strong>:<span> July 29, 2017</span>
+            .document.mediaEffect-2(data-waypoint="100%")
+                .heading-content Job Description
+                ul
+                    li Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    li Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    li Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    li Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    li Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    li Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    li Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                .heading-content Job Requirement
+                ul
+                    li Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    li Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    li Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    li Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    li Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    li Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    li Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                .heading-content Benefit
+                ul
+                    li Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    li Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    li Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    li Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    li Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    li Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    li Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                .heading-content Resume Requirement
+                ul
+                    li Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    li Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    li Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    li Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    li Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    li Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    li Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                .text-center
+                        a(href="mailto:sampleemail@com").btn-load apply now
+            .relativeBox.mediaEffect-3(data-waypoint="100%")
+                .row
+                    .col-sm-9
+                        .titleHeading--news Other JOBS
+                    .col-sm-3.titleHeading--link
+                        a(href=url + "/career-2.html").btn-view
+                            i.fa.fa-bars
+                            | View all
+                .careerList#slideCareer
+                    .careerList__item
+                        .row
+                            .col-12
+                                .title
+                                    a(href= url + "/career-detail.html") Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+
+                            .col-6
+                                .branch
+                                    i.fa.fa-briefcase
+                                    | Marketing
+                            .col-6
+                                .add
+                                    i.fa.fa-map-marker
+                                    | Hanoi
+                            .col-12
+                                a(href= url + "/career-detail.html").btn-view-2 View detail 
+                    .careerList__item
+                        .row
+                            .col-12
+                                .title
+                                    a(href= url + "/career-detail.html") Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+
+                            .col-6
+                                .branch
+                                    i.fa.fa-briefcase
+                                    | Marketing
+                            .col-6
+                                .add
+                                    i.fa.fa-map-marker
+                                    | Hanoi
+                            .col-12
+                                a(href= url + "/career-detail.html").btn-view-2 View detail 
+                    .careerList__item
+                        .row
+                            .col-12
+                                .title
+                                    a(href= url + "/career-detail.html") Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+
+                            .col-6
+                                .branch
+                                    i.fa.fa-briefcase
+                                    | Marketing
+                            .col-6
+                                .add
+                                    i.fa.fa-map-marker
+                                    | Hanoi
+                            .col-12
+                                a(href= url + "/career-detail.html").btn-view-2 View detail 
+                    .careerList__item
+                        .row
+                            .col-12
+                                .title
+                                    a(href= url + "/career-detail.html") Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+
+                            .col-6
+                                .branch
+                                    i.fa.fa-briefcase
+                                    | Marketing
+                            .col-6
+                                .add
+                                    i.fa.fa-map-marker
+                                    | Hanoi
+                            .col-12
+                                a(href= url + "/career-detail.html").btn-view-2 View detail 
+                    .careerList__item
+                        .row
+                            .col-12
+                                .title
+                                    a(href= url + "/career-detail.html") Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+
+                            .col-6
+                                .branch
+                                    i.fa.fa-briefcase
+                                    | Marketing
+                            .col-6
+                                .add
+                                    i.fa.fa-map-marker
+                                    | Hanoi
+                            .col-12
+                                a(href= url + "/career-detail.html").btn-view-2 View detail            

@@ -1,0 +1,25 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'propertytype';
+block content
+    +bgImg(imgDataPath + 'property-type/bg-property-type.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='/our-business') Our business
+                        li.breadcrumb-item.active(aria-current='page') Property Type
+    section.mainLogistic
+        .container
+            h1.titleHeading(data-waypoint="100%") property type
+            .document(data-waypoint="100%")
+                p Our focus is to leverage local strong relationships with tenants and development expertise to develop industrial real estate properties including: (i) Ready-built factories, (ii) Logistics warehouses and (iii) Built-to-suit projects and (iv) Sale & Lease back
+            section.propertyTypeList(data-waypoint="100%")
+                include modules/_propertyTypeList

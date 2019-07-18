@@ -1,0 +1,54 @@
+//effect 
+.mainBeardcrumb[data-waypoint],
+.titleHeading[data-waypoint],
+.document[data-waypoint],
+.logisticList[data-waypoint],
+.boxVision[data-waypoint],
+.timeline[data-waypoint],
+.listFund[data-waypoint],
+.businessFeatures[data-waypoint],
+.propertyTypeList[data-waypoint],
+.projectFeatures[data-waypoint],
+.projectPictures[data-waypoint],
+.projectLocation[data-waypoint],
+.projectMap[data-waypoint],
+.innerContact[data-waypoint],
+.searchHeading[data-waypoint],
+.searchResult[data-waypoint],
+.innerourPresence[data-waypoint],.gridPartner[data-waypoint],.listTeam[data-waypoint],.mediaEffect[data-waypoint],.mediaEffect-2[data-waypoint],.mediaEffect-3[data-waypoint]  {
+    transition: all 1s ease-in-out;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    opacity: 0;
+    &.active {
+        animation-name: fadeInUp;
+        opacity: 1;
+        animation-fill-mode: backwards;
+    }
+}
+
+.document[data-waypoint],
+.listFund[data-waypoint],
+.innerContact[data-waypoint],
+.searchResult[data-waypoint],
+.innerourPresence[data-waypoint],.gridPartner[data-waypoint],.mediaEffect[data-waypoint] {
+    animation-delay: 0.4s;
+}
+
+.logisticList[data-waypoint],
+.boxVision[data-waypoint],
+.timeline[data-waypoint],
+.businessFeatures[data-waypoint],
+.propertyTypeList[data-waypoint],
+.projectFeatures[data-waypoint],.listTeam[data-waypoint],.mediaEffect-2[data-waypoint]  {
+    animation-delay: 0.6s;
+}
+
+.projectPictures[data-waypoint],
+.projectLocation[data-waypoint],.mediaEffect-3[data-waypoint]{
+    animation-delay: 0.8s;
+}
+
+.projectMap[data-waypoint] {
+    animation-delay: 1s;
+}

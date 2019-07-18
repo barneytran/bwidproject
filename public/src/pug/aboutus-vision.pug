@@ -1,0 +1,51 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'vision';
+block content
+    +bgImg(imgDataPath + 'BWID-About-Our-Company.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='#') Home
+                        li.breadcrumb-item
+                            a(href='#') About us 
+                        li.breadcrumb-item.active(aria-current='page') Vision & values
+    section.mainContact
+        .container
+            h1.titleHeading(data-waypoint="100%") Vision & values
+            .document(data-waypoint="100%")
+                p BW Industrial’s plan is to create the logistics and industrial platform of choice for leading MNCs, 3PLs and e-commerce companies, according to Mr. Jeffrey Perlman, Managing Director and Head of Southeast Asia of Warburg Pincus.
+                p “With a sizable population of nearly 100 million people and an increasingly diversified economy, manufacturing and domestic consumption have become the central areas of growth for Vietnam.  We feel that our timing is just right to tap into these growth opportunities with the goal of taking Vietnam’s industrial and logistics value chain to the next level.” commented Mr. Perlman.
+            .boxVision(data-waypoint="100%")
+                .boxVision__image
+                    img(src=imgDataPath + "aboutus/arrow-vision.svg" alt="")
+                .boxVision__item
+                    .boxVision__item__icon
+                        img(src=imgDataPath + "aboutus/ic-about-1.svg" alt="")
+                    .boxVision__item__content
+                        h4 JANUARY 23 2018
+                        p Company established
+                .boxVision__item
+                    .boxVision__item__icon
+                        img(src=imgDataPath + "aboutus/ic-about-2.svg" alt="")
+                    .boxVision__item__content
+                        h4 END OF 2018
+                        p Acquire more industrial land in strategic locations Complete master plan/ design and start construction on the 2 seed projectsprojects (i.e. My Phuoc and Bau Bang)
+                .boxVision__item
+                    .boxVision__item__icon
+                        img(src=imgDataPath + "aboutus/ic-about-3.svg" alt="")
+                    .boxVision__item__content
+                        h4 2019 PLAN
+                        p Following the successful execution in the Northern and Southern Economic Zones, BW Industrial expands to the Central Vietnam
+                .boxVision__item
+                    .boxVision__item__icon
+                        img(src=imgDataPath + "aboutus/ic-about-4.svg" alt="")
+                    .boxVision__item__content
+                        h4 2020 VISION
+                        p #1 For-rent Industrial Developer in Vietnam with a strong presence nationwide and expanding

@@ -1,0 +1,38 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'fund';
+block content
+    +bgImg(imgDataPath + 'BWID-About-Our-Company.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%") 
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='#') Home
+                        li.breadcrumb-item
+                            a(href='#') About us 
+                        li.breadcrumb-item.active(aria-current='page') Fund management
+    section.mainContact
+        .container
+            h1.titleHeading(data-waypoint="100%")  Fund management
+            .listFund(data-waypoint="100%") 
+                .listFund__item
+                    .row
+                        .col-md-2.col-sm-3.col-4.break480
+                            img(src=imgDataPath + "aboutus/fund-logo-1.png" alt="")
+                        .col-md-10.col-sm-9.col-8.break480
+                            h4 About Becamex IDC
+                            p Established in 1976, Becamex specializes in developing large-scale industrial townships with one of the largest industrial landbanks in key markets across Vietnam. Over the past 20 years, Becamex has been a pioneer in the industrial real estate industry in the country with the creation of over 10 world class industrial parks with Fortune 500 companies as its existing business partners and clients. 
+                            p Historically, Becamex has formed a number of partnerships with foreign players such as TOKYU Corporation, a major Tokyo-based infrastructure developer, and Sembcorp, a Temasek-sponsored industrial group through the Vietnam Singapore Industrial Park platform (“VSIP”), which is now widely recognized as one of the most successful industrial park developers in Vietnam with over $10 billion of investments to-date.
+                .listFund__item
+                    .row
+                        .col-md-2.col-sm-3.col-4.break480
+                            img(src=imgDataPath + "aboutus/fund-logo-2.png" alt="")
+                        .col-md-10.col-sm-9.col-8.break480
+                            h4 About Warburg Pincus
+                            p Established in 1976, Becamex specializes in developing large-scale industrial townships with one of the largest industrial landbanks in key markets across Vietnam. Over the past 20 years, Becamex has been a pioneer in the industrial real estate industry in the country with the creation of over 10 world class industrial parks with Fortune 500 companies as its existing business partners and clients. 
+                            p Historically, Becamex has formed a number of partnerships with foreign players such as TOKYU Corporation, a major Tokyo-based infrastructure developer, and Sembcorp, a Temasek-sponsored industrial group through the Vietnam Singapore Industrial Park platform (“VSIP”), which is now widely recognized as one of the most successful industrial park developers in Vietnam with over $10 billion of investments to-date.

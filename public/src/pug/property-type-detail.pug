@@ -1,0 +1,87 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+
+block content
+    +bgImg(imgDataPath + 'property-type/bg-property-type-detail.jpg','bgPropertyDetail')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='/our-business') Our business
+                        li.breadcrumb-item
+                            a(href='/our-business') Property Type
+                        li.breadcrumb-item
+                            a(href='/our-business') Logistics Warehouses
+                        li.breadcrumb-item.active(aria-current='page') Lorem ipsum dolor Building
+    section.mainPropertyDetail
+        .container
+            h1.titleHeading(data-waypoint="100%") Lorem ipsum dolor Building
+            .mainPropertyDetail__wrap.document(data-waypoint="100%")
+                p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br/>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                p Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                p Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+    section.projectFeatures(data-waypoint="100%")
+        .container
+            .titleWrap.text-center
+                h4.titleHeadingDetail Project Features
+            include modules/_projectFeatures
+    section.projectPictures(data-waypoint="100%")
+        .container
+            .titleWrap.text-center
+                h4.titleHeadingDetail Pictures
+        include modules/_projectPictures
+    section.projectLocation(data-waypoint="100%")
+        .container
+            include modules/_projectLocation
+    section.projectMap(data-waypoint="100%")
+       #mapLocation(style="height: 420px;")
+block js
+    script.
+        function initialise() {
+            var myLatlng = new google.maps.LatLng(21.092328, 105.964916); // Add the coordinates
+            var mapOptions = {
+                zoom: 15, // The initial zoom level when your map loads (0-20)
+                minZoom: 6, // Minimum zoom level allowed (0-20)
+                maxZoom: 17, // Maximum soom level allowed (0-20)
+                zoomControl:true, // Set to true if using zoomControlOptions below, or false to remove all zoom controls.
+                zoomControlOptions: {
+                    style:google.maps.ZoomControlStyle.DEFAULT // Change to SMALL to force just the + and - buttons.
+                },
+                center: myLatlng, // Centre the Map to our coordinates variable
+                mapTypeId: google.maps.MapTypeId.ROADMAP, // Set the type of Map
+                scrollwheel: false, // Disable Mouse Scroll zooming (Essential for responsive sites!)
+                // All of the below are set to true by default, so simply remove if set to true:
+                panControl:false, // Set to false to disable
+                mapTypeControl:false, // Disable Map/Satellite switch
+                scaleControl:false, // Set to false to hide scale
+                streetViewControl:false, // Set to disable to hide street view
+                overviewMapControl:false, // Set to false to remove overview control
+                rotateControl:false // Set to false to disable rotate control
+            }
+            var map = new google.maps.Map(document.getElementById('mapLocation'), mapOptions); // Render our map within the empty div
+            var image = new google.maps.MarkerImage("/frontend/assets/images/icons/icon-pin.png", null, null, null, new google.maps.Size(69,112)); // Create a variable for our marker image.
+            var marker = new google.maps.Marker({ // Set the marker
+                position: myLatlng, // Position marker to coordinates
+                icon:image, //use our image as the marker
+                map: map, // assign the market to our map variable
+                title: 'Click here for more details' // Marker ALT Text
+            });
+            // 	google.maps.event.addListener(marker, 'click', function() { // Add a Click Listener to our marker
+            //		window.location='https://www.snowdonrailway.co.uk/shop_and_cafe.php'; // URL to Link Marker to (i.e Google Places Listing)
+            // 	});
+            // var infowindow = new google.maps.InfoWindow({ // Create a new InfoWindow
+            //       content:"This is <strong>Megamall Penang</strong>, <em>one</em> of shopping centres that has a cinema!" // HTML contents of the InfoWindow
+            //   });
+            // google.maps.event.addListener(marker, 'click', function() { // Add a Click Listener to our marker
+            //       infowindow.open(map,marker); // Open our InfoWindow
+            //   });
+            google.maps.event.addDomListener(window, 'resize', function() { map.setCenter(myLatlng); }); // Keeps the Pin Central when resizing the browser on responsive sites
+        }
+        google.maps.event.addDomListener(window, 'load', initialise); // Execute our 'initialise' function once the page has loaded.

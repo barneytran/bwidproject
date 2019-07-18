@@ -1,0 +1,106 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'leasing-3';
+block content
+    +bgImg(imgDataPath + 'lease/case-studies.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='/') Property leasing    
+                        li.breadcrumb-item.active(aria-current='page') Case studies
+    section.ourLeasing
+        .container
+            h1.titleHeading(data-waypoint="100%") Case studies
+            .document.mediaEffect(data-waypoint="100%")
+                p We learn from the best to be the best. Our sister companies will transfer best in class practices so we deliver the best products
+            ul.navLink.nav.nav-tabs.mediaEffect-2(data-waypoint="100%" id="nav-tab" role="tablist")
+                    li: a.active(data-toggle="tab" id="case01-tab"  href="#case-1" role="tab" aria-controls="home" aria-selected="true") D&J China
+                    li: a(id="case02-tab" data-toggle="tab" href="#case-2" role="tab" aria-controls="profile" aria-selected="false") ESR
+            .tab-content.mediaEffect-3(data-waypoint="100%")
+                .tab-pane.fade.show.active#case-1(role="tabpanel" aria-labelledby="case01-tab")
+                    #accordionExample.accordion
+                        .card
+                            #headingOne.card-header
+                                h5.mb-0
+                                    a(data-toggle='collapse', href="#" data-target='#collapseOne', aria-expanded='true', aria-controls='collapseOne') 
+                                        span(class="icon-tab")
+                                            i.fa.fa-angle-double-up
+                                        | About D&J China
+
+                            #collapseOne.collapse.show(aria-labelledby='headingOne', data-parent='#accordionExample')
+                                .card-body
+                                    .document
+                                        .row
+                                            .col-sm-6
+                                                p: img(src=imgDataPath + "lease/img11.jpg" alt="")
+                                            .col-sm-6
+                                                p: img(src=imgDataPath + "lease/img10.jpg" alt="")
+                                        p Co-founded by Warburg Pincus Investment Group (“Warburg Pincus”) in 2014 and headquartered in Shanghai, Dongjiu (the “Company”) is a leading integrated industrial properties and service platform provider in China.<br/>Their core businesses are industrial property development, operation and investment, as well as fund management. As a leading integrated industrial properties and service provider in China, D&J China continuously expand their business reach and strive to provide innovative industrial property solutions that support “smart manufacturing” and a sustainable environment. 
+                        .card
+                            #headingTwo.card-header
+                                h5.mb-0
+                                    a(data-toggle='collapse', href="#"  data-target='#collapseTwo', aria-expanded='true', aria-controls='collapseOne') 
+                                        span(class="icon-tab")
+                                            i.fa.fa-angle-double-up
+                                        | Huaping (Kunshan) Intelligent Manufacturing Park
+                            #collapseTwo.collapse.show(aria-labelledby='headingTwo', data-parent='#accordionExample')
+                                .card-body
+                                    .sliderCase
+                                        .sliderCase__item
+                                            +bgImg(imgDataPath + 'lease/img12.jpg','image effectImg')
+                                        .sliderCase__item
+                                            +bgImg(imgDataPath + 'lease/img12.jpg','image effectImg')
+                                        .sliderCase__item
+                                            +bgImg(imgDataPath + 'lease/img12.jpg','image effectImg')
+                                        .sliderCase__item
+                                            +bgImg(imgDataPath + 'lease/img12.jpg','image effectImg')
+                                    .document           
+                                        p Located in the Kunshan High-Tech Industrial Development Zone, Huaping (Kunshan) Intelligent Manufacturing Park plays an important role in driving self-innovation, expediting the cluster of Hi-Tech industries and promoting the transformation of economic development in the city of Kunshan. This Park has already shaped three leading industrial clusters: auto components, precision manufacturing to artificial intelligence.<br/>This park has been developed in two phases. Phase One consists of 11 steel-structured single-storey plants. Covering an area of 2000-5000m2, each plant enjoys at last 11 meters floor height, a floor load of 3.0 T/m2 and boasts adequate power supply, reasonably allotted office spaces and reserved traffic brackets. Road networks of this park takes both safety and practicability into consideration while fully satisfying the needs of logistics handling. Completed and came into service in Q3 of 2017, this Park has attracted a variety of highly reputable foreign-invested enterprises, such as Magna Steyr from Canada, Haywood from UK, Trasmec from Italy, Dixon from US and EDI from Australia.
+
+                .tab-pane.fade#case-2(role="tabpanel" aria-labelledby="case02-tab")
+                    #accordionExample-2.accordion
+                        .card
+                            #headingOne-2.card-header
+                                h5.mb-0
+                                    a(data-toggle='collapse', href="#" data-target='#collapseOne-2', aria-expanded='true', aria-controls='collapseOne-2') 
+                                        span(class="icon-tab")
+                                            i.fa.fa-angle-double-up
+                                        | About D&J China
+
+                            #collapseOne-2.collapse.show(aria-labelledby='headingOne', data-parent='#accordionExample-2')
+                                .card-body
+                                    .document
+                                        .row
+                                            .col-sm-6
+                                                p: img(src=imgDataPath + "lease/img11.jpg" alt="")
+                                            .col-sm-6
+                                                p: img(src=imgDataPath + "lease/img10.jpg" alt="")
+                                        p Co-founded by Warburg Pincus Investment Group (“Warburg Pincus”) in 2014 and headquartered in Shanghai, Dongjiu (the “Company”) is a leading integrated industrial properties and service platform provider in China.<br/>Their core businesses are industrial property development, operation and investment, as well as fund management. As a leading integrated industrial properties and service provider in China, D&J China continuously expand their business reach and strive to provide innovative industrial property solutions that support “smart manufacturing” and a sustainable environment. 
+                        .card
+                            #headingTwo-2.card-header
+                                h5.mb-0
+                                    a(data-toggle='collapse', href="#"  data-target='#collapseTwo-2', aria-expanded='true', aria-controls='collapseOne-2') 
+                                        span(class="icon-tab")
+                                            i.fa.fa-angle-double-up
+                                        | Huaping (Kunshan) Intelligent Manufacturing Park
+                            #collapseTwo-2.collapse.show(aria-labelledby='headingTwo-2', data-parent='#accordionExample-2')
+                                .card-body
+                                    .sliderCase
+                                        .sliderCase__item
+                                            +bgImg(imgDataPath + 'lease/img12.jpg','image effectImg')
+                                        .sliderCase__item
+                                            +bgImg(imgDataPath + 'lease/img12.jpg','image effectImg')
+                                        .sliderCase__item
+                                            +bgImg(imgDataPath + 'lease/img12.jpg','image effectImg')
+                                        .sliderCase__item
+                                            +bgImg(imgDataPath + 'lease/img12.jpg','image effectImg')
+                                    .document           
+                                        p Located in the Kunshan High-Tech Industrial Development Zone, Huaping (Kunshan) Intelligent Manufacturing Park plays an important role in driving self-innovation, expediting the cluster of Hi-Tech industries and promoting the transformation of economic development in the city of Kunshan. This Park has already shaped three leading industrial clusters: auto components, precision manufacturing to artificial intelligence.<br/>This park has been developed in two phases. Phase One consists of 11 steel-structured single-storey plants. Covering an area of 2000-5000m2, each plant enjoys at last 11 meters floor height, a floor load of 3.0 T/m2 and boasts adequate power supply, reasonably allotted office spaces and reserved traffic brackets. Road networks of this park takes both safety and practicability into consideration while fully satisfying the needs of logistics handling. Completed and came into service in Q3 of 2017, this Park has attracted a variety of highly reputable foreign-invested enterprises, such as Magna Steyr from Canada, Haywood from UK, Trasmec from Italy, Dixon from US and EDI from Australia.

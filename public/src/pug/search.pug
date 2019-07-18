@@ -1,0 +1,50 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+
+block content
+    section.searchHeading(data-waypoint="100%")
+        .container
+            .row
+                .col-md-10.offset-md-1.col-12
+                    form.searchHeading__form
+                        p.searchHeading__form__text Search for
+                        .form-group
+                            i.ic_search
+                            input(type="text" class="form-control" value="warehouse")
+                            button.btnRemove(type="button")
+                                i.ic_close
+    section.searchResult(data-waypoint="100%")
+        .container
+            .row
+                .col-md-10.offset-md-1.col-12
+                    p.searchResult__text Search results for <span class="searchResult__text__color">“warehouse”</span>
+                    .row
+                        .col-lg-2
+                            .searchResult__item
+                                a(href="#")
+                                span.searchResult__item__text All
+                                span.searchResult__item__number 105
+                        .col-lg-2
+                            .searchResult__item
+                                a(href="#")
+                                span.searchResult__item__text Our businesses
+                                span.searchResult__item__number 10
+                        .col-lg-2
+                            .searchResult__item
+                                a(href="#")
+                                span.searchResult__item__text Property leasing
+                                span.searchResult__item__number 01
+                        .col-lg-2
+                            .searchResult__item
+                                a(href="#")
+                                span.searchResult__item__text Media center
+                                span.searchResult__item__number 0
+                        .col-lg-2
+                            .searchResult__item
+                                a(href="#")
+                                span.searchResult__item__text Careers
+                                span.searchResult__item__number 2
+                    include ./modules/_searchResult
+                    include ./modules/_pagination2

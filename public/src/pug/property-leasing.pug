@@ -1,0 +1,65 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'leasing-1';
+block content
+    +bgImg(imgDataPath + 'lease/bg-leasing-model.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='/') Property leasing    
+                        li.breadcrumb-item.active(aria-current='page') Property for lease
+    section.ourLeasing
+        .container
+            h1.titleHeading(data-waypoint="100%") Property for lease
+            .mediaEffect(data-waypoint="100%")
+                .searchLease
+                    form().form-style
+                        .row
+                            .col-md-4
+                                .form-group
+                                    select.selectpicker.show-tick(title="Select Property Type")
+                                        option All
+                                        option Ready-built factory
+                                        option Logistics Warehouse
+                                        option Built-to-suit Project
+                                        option Sale and Leaseback
+                            .col-md-4
+                                .form-group
+                                    select.selectpicker.show-tick(title="Select Region")
+                                        option Department
+                            .col-md-4
+                                .form-group
+                                    button.btn-clear.btn.btn-submit#btn-clear
+                                        i.fa.fa-times
+                                        | Clear
+            //list
+            .listLease.mediaEffect-2(data-waypoint="100%")
+                .row
+                    .col-md-4.col-6.break360
+                        +leaseItem(imgDataPath + 'lease/img1.jpg',url + '/property-type-detail.html','Ready-built factory')
+                    .col-md-4.col-6.break360
+                        +leaseItem(imgDataPath + 'lease/img2.jpg',url + '/property-type-detail.html','Ready-built factory')
+                    .col-md-4.col-6.break360
+                        +leaseItem(imgDataPath + 'lease/img3.jpg',url + '/property-type-detail.html','Logistics Warehouse')
+                    .col-md-4.col-6.break360
+                        +leaseItem(imgDataPath + 'lease/img4.jpg',url + '/property-type-detail.html','Built-to-suit Project')
+                    .col-md-4.col-6.break360
+                        +leaseItem(imgDataPath + 'lease/img5.jpg',url + '/property-type-detail.html','Ready-built factory')
+                    .col-md-4.col-6.break360
+                        +leaseItem(imgDataPath + 'lease/img6.jpg',url + '/property-type-detail.html','Sale and Leaseback')
+                    .col-md-4.col-6.break360
+                        +leaseItem(imgDataPath + 'lease/img7.jpg',url + '/property-type-detail.html','Ready-built factory')
+                    .col-md-4.col-6.break360
+                        +leaseItem(imgDataPath + 'lease/img8.jpg',url + '/property-type-detail.html','Ready-built factory')
+                    .col-md-4.col-6.break360
+                        +leaseItem(imgDataPath + 'lease/img9.jpg',url + '/property-type-detail.html','Ready-built factory')
+            .mediaEffect-3(data-waypoint="100%")
+                include modules/_pagination

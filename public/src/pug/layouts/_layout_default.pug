@@ -1,0 +1,34 @@
+doctype html
+include ../components/_var
+include ../components/_mixin
+html(lang=language)
+    head
+        block setting   
+            -var mainActive = 'home';
+            -var bodyClass = '';
+
+        block title
+        include ../components/_meta
+
+        //- Add Custom CSS
+        block styles
+    body(class=bodyClass)
+        include ../components/_header
+
+        main.wrapper
+            block content
+        // End Main Content
+
+        include ../components/_footer
+        
+        //- Add Custom Modal
+        block modal
+
+        script(src='//maps.google.com/maps/api/js?key=AIzaSyDoxHt7qRysqWysf5cbyD-gfpIxetDaIhk')
+        script(src="https://code.jquery.com/jquery-3.3.1.min.js")
+        script(src=url + "/assets/js/library.js")
+        script(src=url + "/assets/js/main.js")
+        script(src='https://www.google.com/recaptcha/api.js')
+
+        //- Add Custom Js
+        block js

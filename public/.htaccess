@@ -1,0 +1,4 @@
+RewriteEngine on
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://www.bwidjsc.com/$1 [R=301,L]

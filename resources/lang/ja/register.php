@@ -1,0 +1,21 @@
+<?php
+return [
+    'title' => '訪問登録',
+    'name' => '申請者の氏名',
+    'phone' => 'Phone',
+    'company' => '会社',
+    'email' => 'Email',
+    'content' => 'Content',
+    'target' => '訪問目的',
+    'business' => 'ビジネスサービス',
+    'country' => '原産国',
+    'country_other' => '他の国',
+    'number_people' => '訪問者数',
+    'select' => ' -  Select  - ',
+    'from' => 'From',
+    'to' => 'To',
+    'register_time' => '訪問日',
+    'select_date' => ' - 日付を選択 - ',
+    'target_other' => 'その他',
+    'note' => 'Note',
+];

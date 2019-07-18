@@ -1,0 +1,187 @@
+// Sample code
+footer.bd-footer {
+    background: #e3e3e3;
+    padding-top: rem(35);
+    padding-bottom: rem(35);
+    .nav-footer {
+        padding: 0;
+        list-style: none;
+        font-size: rem(16);
+        font-family: $font-custom;
+        @include media-breakpoint-down(md) {
+            text-align:center;
+            padding-bottom: 5px
+        }
+        
+        >li {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            padding-left: rem(16);
+            padding-right: rem(8);
+            letter-spacing: 0.25px;
+            @include media-breakpoint-down(md) {
+                padding-left: rem(11);
+                padding-right: rem(3);
+            }
+            
+            &:before {
+                content: "|";
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: #959595;
+            }
+            &:first-child {
+                padding-left: 0;
+                &:before {
+                    display: none;
+                }
+            }
+            >a {
+                color: $color-title;
+                @include transition();
+                &:hover {
+                    color: $color-hover;
+                    text-decoration: none;
+                    @include transition();
+                }
+            }
+        }
+    }
+    
+    
+}
+
+.copyright {
+    color: $color-link;
+    text-align: center;
+    border-top: 1px solid #acacac;
+    padding-top: rem(20);
+    margin-top: rem(10);
+    font-size: rem(14);
+    font-weight: 500;
+    text-align:center;
+    p {
+        margin: 0;
+    }
+    @include media-breakpoint-down(md) {
+        span{
+            display:block
+        }
+    }
+}
+
+.footer__totop {
+    position: fixed;
+    width: rem(46);
+    height: rem(46);
+    background: rgba(16, 77, 127, 0.8);
+    color: #fff;
+    border-radius: 4px;
+    right: 30px;
+    bottom: 50px;
+    text-align: center;
+    font-family: $font-custom;
+    cursor: pointer;
+    display: none;
+    font-size:rem(15);
+    //font-weight: 800;
+    box-shadow: 1px 4px 16px 0px rgba(50, 50, 50, 0.13);
+    z-index: 9999;
+    @include media-breakpoint-down(md) {
+     
+    }
+    
+}
+
+.share-footer {
+    text-align: right;
+   
+    a {
+        display: inline-block;
+        width: rem(30);
+        height: rem(30);
+        background: #cccccc;
+        border-radius: 50%;
+        color: $color-title;
+        font-size: rem(16);
+        @include transition();
+        margin-left: rem(15);
+        text-align: center;
+        line-height: rem(30);    position: relative;
+        &:hover {
+            background: $color-hover;
+            color: white;
+        }
+        &.link-hotline{
+            width:auto;
+            height:auto;
+            background: none;
+            border-radius: 0;
+            font-weight:500;
+            padding-right:rem(10);
+            color:$color-hover;
+            i{
+                display: inline-block;
+                line-height: rem(30);
+                height: rem(30);
+                vertical-align: middle;
+                margin-right: rem(6);
+                font-size:rem(19);
+            }
+            &:hover{
+                color:$color-hover;
+                i{
+                    color:inherit;
+                }
+            }
+        }
+        .box_weChat{
+            position: absolute;
+            width: 120px;
+            left: -50px;
+            background: #01135f;
+            padding: 5px;
+            bottom: rem(43);
+            opacity: 0;
+            visibility: hidden;
+            @include transition();
+            &.active{
+                opacity: 1;
+                visibility:visible;
+            }
+            img{
+                max-width: 100%;
+            }
+            &:before{
+                color: #01135f;
+                content: "\43";
+                font-family: eleganticons;
+                speak: none;
+                font-style: normal;
+                font-weight: 400;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                position: absolute;
+                bottom: rem(-10);
+                left: 55px;
+            }
+        }
+    }
+    @include media-breakpoint-down(md) {
+        text-align:center;
+        a{
+            margin-left: rem(5);
+            margin-right: rem(0);
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        a{
+            margin-left: rem(5);
+            margin-right: rem(5);
+        }
+    }
+}

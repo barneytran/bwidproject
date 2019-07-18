@@ -1,0 +1,45 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'media';
+    - var mainActive = 'gallery-2';
+block content
+    +bgImg(imgDataPath + 'news/media-center-news.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='#') Media Center 
+                        li.breadcrumb-item
+                            a(href='#') Gallery    
+                        li.breadcrumb-item.active(aria-current='page') Video
+    section.ourNewsList
+        .container
+            h1.titleHeading(data-waypoint="100%") Video
+            .gridNews--2.gridNewsPhoto.gridNewsVideo.mediaEffect(data-waypoint="100%")
+                .row
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img22.jpg',url + 'media-center-news-video-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img23.jpg',url + 'media-center-news-video-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img24.jpg',url + 'media-center-news-video-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img25.jpg',url + 'media-center-news-video-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img26.jpg',url + 'media-center-news-video-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img27.jpg',url + 'media-center-news-video-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img28.jpg',url + 'media-center-news-video-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img29.jpg',url + 'media-center-news-video-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img30.jpg',url + 'media-center-news-video-detail.html','otherstyle')
+            include modules/_pagination

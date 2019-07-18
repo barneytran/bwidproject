@@ -1,0 +1,53 @@
+.accordion {
+    .card {
+        margin-bottom: rem(20);
+    }
+    .card-body {
+        max-width: 980px;
+        margin: 0 auto;
+        padding-bottom: 0;
+        @include media-breakpoint-up(md) {
+            padding-top: rem(70);
+        }
+        .document {
+            p {
+                margin-bottom: rem(40);
+                text-align: justify;
+            }
+        }
+    }
+    .card-header {
+        a {
+            font-size: rem(18);
+            font-weight: 800;
+            color: $color-active;
+            font-family: $font-custom;
+            position: relative;
+            display: block;
+            text-decoration: none;
+            padding: $card-spacer-y $card-spacer-x;
+            padding-left: rem(60);
+            padding-right: rem(30);
+            &.collapsed {
+                //color: $color-link;
+                @include transition(all 0.4s ease-in-out);
+                text-decoration: none !important;
+                span.icon-tab {
+                    i.fa-angle-double-up:before {
+                        content: "\f103";
+                    }
+                }
+            }
+        }
+    }
+    span.icon-tab {
+        position: absolute;
+        right: rem(20);
+        top: rem(13);
+        width: rem(16);
+        height: rem(16);
+        display: block;
+        color: #999999;
+        font-weight: normal;
+    }
+}

@@ -1,0 +1,62 @@
+$bg-project-pictures: #f2f2f2;
+
+.projectPictures {
+    padding: rem(35) 0 rem(13);
+    background-color: $bg-project-pictures;
+
+    &__wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__inner {
+        margin: 0 -75px;
+        max-width: 1320px;
+        margin: 0 auto;
+        position: initial;
+
+        .slick-list {
+            overflow: visible;
+        }
+
+        .arrow {
+            background-color: rgba(0, 0, 0, .8);
+            width: 40px;
+            height: 85px;
+            top: 50%;
+            transform: translate(0, -50%);    opacity: 1;
+
+            &--prev {
+                left: 0;
+            }
+
+            &--next {
+                right: 0;
+            }
+
+            i {
+                background-size: 30%;
+                background-position: center;
+            }
+        }
+    }
+
+    &__item {
+        padding: 0 10px;
+
+        &__images {
+            @include bg-box(650, 400);
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .projectPictures {
+        &__inner {
+            .arrow {
+                width: 30px;
+                height: 50px;
+            }
+        }
+    }
+}

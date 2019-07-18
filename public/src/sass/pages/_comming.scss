@@ -1,0 +1,76 @@
+.mainComming {
+    background: url($image-path + "cooming.jpg") no-repeat;
+    color: $white;
+    padding-top: rem(160);
+    padding-bottom: rem(275);
+    .boxComming {
+        text-align: center;
+        .info {
+            background: url($image-path + "bg--heading-comming.png") no-repeat;
+            max-width: 506px;
+            height: 163px;   
+            font-family: $font-custom;
+            text-transform: uppercase;
+            padding: rem(5) rem(25);
+            margin: 0 auto;    text-align: left;
+            display: table;
+            width: 100%;padding-bottom: rem(16);
+            @include media-breakpoint-down(xs) {
+                max-width: unset;
+                height: 100%;  
+                background-size: 100% 100%;
+                padding-top: 20px;
+                padding-bottom: 42px; 
+            }
+            &__inner{
+                display: table-cell;
+                vertical-align: middle;
+                @include media-breakpoint-down(xs) {
+                    padding-top: 10px;
+                }
+                
+            }
+            span {
+                display: block;
+                font-size: rem(24);
+                font-weight: bold;
+            }
+            h4 {
+                font-size: rem(50);
+                font-weight: 800;
+                margin: 0;
+                letter-spacing: 1px;
+                text-shadow: 3px 2px 13px rgba(0, 0, 0, 0.5);
+                @include media-breakpoint-down(xs) {font-size: rem(40);}
+            }
+        }
+        p {
+            font-size: rem(24);
+            letter-spacing: 1px;
+            margin-top: rem(25);
+        }
+        >a {
+            background:$color-hover;
+            color: #fff;
+            font-size: rem(14);
+            font-weight: 800;
+            display: inline-block;
+            letter-spacing: 0.75px;
+            padding: rem(15) rem(25);
+            font-family: $font-custom;
+            position: relative;
+            padding-right: rem(60);
+            text-decoration: none;
+            @include transition();
+            i {
+                position: absolute;
+                top: 50%;
+                right: rem(10);
+                margin-top: rem(-6);
+            }
+            &:hover{
+                background:$color-active;
+            }
+        }
+    }
+}

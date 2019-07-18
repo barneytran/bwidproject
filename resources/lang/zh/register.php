@@ -1,0 +1,21 @@
+<?php
+return [
+    'title' => '访问注册',
+    'name' => '申请人全名',
+    'phone' => '手机',
+    'company' => '公司',
+    'email' => '电子邮件',
+    'content' => '内容',
+    'target' => '参观目的',
+    'business' => '商业服务',
+    'country' => '原产国',
+    'country_other' => '其他国家',
+    'number_people' => '访客人数',
+    'select' => ' - 选择 - ',
+    'from' => '从',
+    'to' => '至',
+    'register_time' => '访问日期',
+    'select_date' => ' - 选择日期 - ',
+    'target_other' => '其他',
+    'note' => '注意',
+];

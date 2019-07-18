@@ -1,0 +1,42 @@
+header.header
+    .container
+        .row
+            .col-lg-3.col-9
+                a(href=url + "/").logo
+                    img(src=logo alt="")
+            .col-lg-9.col-3
+                a(href="#" class="header__toggle")
+                    span
+                    span
+                    span
+                    span
+                .wrapMenu
+                    .menuMain
+                        +menuNav(mainActive,mainMenu, '', 'nav-menu', 'nav-menu', '' ,'nav-item', 'nav-link','','','menuChild')
+                        .searchMobile
+                            form(action=url + "/search.html")
+                                .searchMobileInner
+                                    input(type="text" placeholder="Search...").form-control
+                                    button.btn-search-close
+                                        i.fa.fa-search
+                .languageBox
+                    .dropdown
+                        button#dropdownMenuButton.btn.dropdown-toggle.btn-language(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                            img(src=imgDataPath + "flags/england.png" alt="")
+                        .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                            a.dropdown-item(href='#'): img(src=imgDataPath + "flags/england.png" alt="") 
+                            a.dropdown-item(href='#'): img(src=imgDataPath + "flags/vietnam.png" alt="") 
+                            a.dropdown-item(href='#'): img(src=imgDataPath + "flags/japan.png" alt="") 
+                            a.dropdown-item(href='#'): img(src=imgDataPath + "flags/south-korea.png" alt="") 
+                            a.dropdown-item(href='#'): img(src=imgDataPath + "flags/china.png" alt="") 
+                .searchBox
+                    button.btn-search.navbar-search-btn
+                        i.fa.fa-search
+                form(action=url + "/search.html")
+                    .innerSearch.navbar-search
+                        input(type="text" placeholder="Find what you are looking for?").form-control
+                        button.btn-search-close
+                            i.fa.fa-search
+// End Header
+|
+|

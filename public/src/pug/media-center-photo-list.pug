@@ -1,0 +1,45 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'media';
+    - var mainActive = 'gallery-1';
+block content
+    +bgImg(imgDataPath + 'news/media-center-news.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='#') Media Center 
+                        li.breadcrumb-item
+                            a(href='#') Gallery    
+                        li.breadcrumb-item.active(aria-current='page') Photo
+    section.ourNewsList
+        .container
+            h1.titleHeading(data-waypoint="100%") Photo
+            .gridNews--2.gridNewsPhoto.mediaEffect(data-waypoint="100%")
+                .row
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img19.jpg',url + 'media-center-news-photo-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img20.jpg',url + 'media-center-news-photo-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img21.jpg',url + 'media-center-news-photo-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img7.jpg',url + 'media-center-news-photo-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img12.jpg',url + 'media-center-news-photo-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img10.jpg',url + 'media-center-news-photo-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img11.jpg',url + 'media-center-news-photo-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img15.jpg',url + 'media-center-news-photo-detail.html','otherstyle')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img16.jpg',url + 'media-center-news-photo-detail.html','otherstyle')
+            include modules/_pagination

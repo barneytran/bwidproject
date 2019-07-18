@@ -1,0 +1,120 @@
+-var url       = '/frontend/';
+-var language       = 'en';
+-var mainActive     = 'home';
+-var slideActive    = 'docs';
+-var logo           = url + 'assets/images/logo.svg'
+-var imgDataPath    = url + 'images/'
+-var iconDataPath     = url + imgDataPath + 'icons/'
+-
+    var mainMenu = [
+        {'key': 'aboutus',     'title': 'about us ',            'url': url + 'aboutus.html','child':[
+            {'key': 'ourcompany',             'title':'Our Company',     'url':url + 'aboutus.html'},
+            {'key': 'vision',             'title':'Vision & values',     'url':url + 'aboutus-vision.html'},
+            {'key': 'core',             'title':'Core management team',     'url':url + 'aboutus-team.html'},
+            {'key': 'milestones',             'title':'Milestones',     'url':url + 'aboutus-milestones.html'},
+            {'key': 'fund',             'title':'Fund management',     'url':url + 'aboutus-fund.html'}
+        ]},
+        {'key': 'businesses',     'title': 'our businesses',   'url': url + 'business-model.html','child':[
+            {'key': 'businessesmodel',             'title':'business model',     'url':url + 'business-model.html'},
+            {'key': 'propertytype',             'title':'property type',     'url':url + 'property-type.html','child':[
+                {'key': 'ready',             'title':'Ready-built factories',     'url':url + 'ready-built-factory.html'},
+                {'key': 'logistic',             'title':'Logistics warehouses',     'url':url + 'logistics-warehouses.html'},
+                {'key': 'built',             'title':'Built-To-Suit Projects',     'url':url + 'built-to-suit-project.html'},
+                {'key': 'sale',             'title':'Sale and lease back',     'url':url + 'sale-and-lease-back.html'}
+            ]},
+            {'key': 'ourpresence',             'title':'our presence',     'url':url + 'our-presence.html'}
+        ]},
+        {'key': 'leasing',    'title': 'property leasing',     'url': url + 'property-leasing.html','child':[
+            {'key': 'leasing-1',             'title':'Property For Lease',     'url':url + 'property-leasing.html'},
+            {'key': 'leasing-2',             'title':'Our Customers',     'url':url + 'property-our-customers.html'},
+            {'key': 'leasing-3',             'title':'Case Studies',     'url':url + 'case-studies.html'}
+        ]},
+        {'key': 'media',    'title': 'media center ',     'url': url + 'media-center-news.html','child':[
+             {'key': 'gallery',             'title':'gallery',     'url':url + 'media-center-gallery.html','child':[
+                 {'key': 'gallery-1',             'title':'Photo',     'url':url + 'media-center-photo-list.html'},
+                 {'key': 'gallery-2',             'title':'Video',     'url':url + 'media-center-video-list.html'}
+             ]},
+             {'key': 'News',             'title':'News',     'url':url + 'media-center-news-list.html','child':[
+                 {'key': 'News-1',             'title':'News for investor',     'url':url + 'media-center-news-list-2.html'},
+                 {'key': 'News-2',             'title':'BW Industrial News',     'url':url + 'media-center-news-list.html'}
+             ]}
+        ]},
+        {'key': 'careers',    'title': 'careers ',     'url': url + 'career.html','child':[
+            {'key': 'career-1',             'title':'BW Industrial Culture',     'url':url + 'career.html'},
+            {'key': 'career-2',             'title':'Current Openings',     'url':url + 'career-2.html'}
+        ]},
+        {'key': 'contact',    'title': 'contact us ',     'url': url + 'contact.html'}
+    ]
+-
+    var mainFooter = [
+        {'key': 'home',     'title': 'Homepage    ',            'url': url + ''},
+        {'key': 'businesses',     'title': 'Contact Us',   'url': url + 'contact.html'},
+        {'key': 'leasing',    'title': ' Privacy Policy  ',     'url': url + 'comming.html'},
+        {'key': 'media',    'title': 'Sitemap ',     'url': url + 'comming.html'}
+    ]
+-
+    var slideMenu = [
+        {'key': 'docs',     'title':'Getting started',  'url':'/docs',                          'child':[
+            {'key': 'docs',             'title':'Introduction',     'url':'/docs'},
+            {'key': 'contents',         'title':'Contents',         'url':'/docs/getting-started/contents.html'},
+            {'key': 'browsers-devices', 'title':'Browsers and devices', 'url':'/docs/getting-started/browsers-devices.html'}
+        ]},
+        {'key': 'overview',     'title':'Layout',  'url':'/docs/layout/index.html',                          'child':[
+            {'key': 'overview',         'title':'Overview',         'url':'/docs/layout/index.html'},
+            {'key': 'grid',             'title':'Grid system',      'url':'/docs/layout/grid.html'},
+            {'key': 'media-object',     'title':'Media object',     'url':'/docs/layout/media-object.html'},
+            {'key': 'utilities-for-layout','title':'Utilities for layout','url':'/docs/layout/utilities-for-layout.html'},
+        ]},
+        {'key': 'reboot',     'title':'Content',  'url':'/docs/content/index.html',                          'child':[
+            {'key': 'reboot',           'title':'Reboot',           'url':'/docs/content/index.html'},
+            {'key': 'code',             'title':'Code',             'url':'/docs/content/code.html'},
+            {'key': 'images',           'title':'Images',           'url':'/docs/content/images.html'},
+            {'key': 'tables',           'title':'Tables',           'url':'/docs/content/tables.html'},
+            {'key': 'figures',          'title':'Figures',          'url':'/docs/content/figures.html'},
+        ]},
+        {'key': 'alerts',   'title':'Components',       'url':'/docs/components/alerts.html',   'child':[
+            {'key': 'alerts',           'title':'Alerts',           'url':'/docs/components/alerts.html'},
+            {'key': 'badges',           'title':'Badge',            'url':'/docs/components/badges.html'},
+            {'key': 'breadcrumb',       'title':'Breadcrumb',       'url':'/docs/components/breadcrumb.html'},
+            {'key': 'buttons',          'title':'Buttons',          'url':'/docs/components/buttons.html'},
+            {'key': 'button-group',     'title':'Button group',     'url':'/docs/components/button-group.html'},
+            {'key': 'cards',            'title':'Card',             'url':'/docs/components/cards.html'},
+            {'key': 'collapse',         'title':'Collapse',         'url':'/docs/components/collapse.html'},
+            {'key': 'dropdowns',        'title':'Dropdowns',        'url':'/docs/components/dropdowns.html'},
+            {'key': 'forms',            'title':'Forms',            'url':'/docs/components/forms.html'},
+            {'key': 'input-group',      'title':'Input group',      'url':'/docs/components/input-group.html'},
+            {'key': 'jumbotron',        'title':'Jumbotron',        'url':'/docs/components/jumbotron.html'},
+            {'key': 'list-group',       'title':'List group',       'url':'/docs/components/list-group.html'},
+            {'key': 'modal',            'title':'Modal',            'url':'/docs/components/modal.html'},
+            {'key': 'navs',             'title':'Navs',             'url':'/docs/components/navs.html'},
+            {'key': 'navbar',           'title':'Navbar',           'url':'/docs/components/navbar.html'},
+            {'key': 'pagination',       'title':'Pagination',       'url':'/docs/components/pagination.html'},
+            {'key': 'popovers',         'title':'Popovers',         'url':'/docs/components/popovers.html'},
+            {'key': 'progress',         'title':'Progress',         'url':'/docs/components/progress.html'},
+            {'key': 'scrollspy',        'title':'Scrollspy',        'url':'/docs/components/scrollspy.html'},
+            {'key': 'tooltips',         'title':'Tooltips',         'url':'/docs/components/tooltips.html'}
+        ]},
+        {'key': 'borders',   'title':'Utilities',   'url':'/docs/utilities/borders.html',                          'child':[
+            {'key': 'borders',          'title':'Borders',          'url':'/docs/utilities/borders.html'},
+            {'key': 'clearfix',         'title':'Clearfix',         'url':'/docs/utilities/clearfix.html'},
+            {'key': 'close-icon',       'title':'Close icon',       'url':'/docs/utilities/close-icon.html'},
+            {'key': 'colors',           'title':'Colors',           'url':'/docs/utilities/colors.html'},
+            {'key': 'display',          'title':'Display',          'url':'/docs/utilities/display.html'},
+            {'key': 'embed',            'title':'Embed',            'url':'/docs/utilities/embed.html'},
+            {'key': 'flex',             'title':'Flex',             'url':'/docs/utilities/flex.html'},
+            {'key': 'float',            'title':'Float',            'url':'/docs/utilities/float.html'},
+            {'key': 'image-replacement','title':'Image replacement','url':'/docs/utilities/image-replacement.html'},
+            {'key': 'position',         'title':'Position',         'url':'/docs/utilities/position.html'},
+            {'key': 'screenreaders',    'title':'Screenreaders',    'url':'/docs/utilities/screenreaders.html'},
+            {'key': 'shadows',          'title':'Shadows',          'url':'/docs/utilities/shadows.html'},
+            {'key': 'sizing',           'title':'Sizing',           'url':'/docs/utilities/sizing.html'},
+            {'key': 'spacing',          'title':'Spacing',          'url':'/docs/utilities/spacing.html'},
+            {'key': 'text',             'title':'Text',             'url':'/docs/utilities/text.html'},
+            {'key': 'vertical-align',   'title':'Vertical align',   'url':'/docs/utilities/vertical-align.html'},
+            {'key': 'visibility',       'title':'Visibility',       'url':'/docs/utilities/visibility.html'},
+        ]},
+        {'key': 'approach',     'title':'Extend',  'url':'/docs/extend/index.html',                          'child':[
+            {'key': 'approach',         'title':'Approach',         'url':'/docs/extend/index.html'},
+            {'key': 'icons',            'title':'Icons',            'url':'/docs/extend/icons.html'},
+        ]},
+    ]       

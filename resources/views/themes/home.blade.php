@@ -1,0 +1,174 @@
+@extends('frontend.layouts.master')
+
+@section('style')
+    <style>
+        .image.effectImg{
+            border: 2px solid #f3f3f3;
+        }
+    </style>
+@endsection
+
+@section('content')
+    <div class="homeSliderWrapper">
+        @foreach($blocks['BANNER-HOME'][0]->children as $banner)
+            <div class="homeSlider">
+            @if(!empty($banner))
+            <a class="btn-link" href="{{$banner->url}}">
+                @if($banner->code == 'BANNER-DESKTOP')
+                    <div class="image" style="background-image:url('{{$banner->photo_translation}}')"><img src="{{$banner->photo_translation}}"></div>
+                @endif
+                @if($banner->code == 'BANNER-MOBILE')
+                    <div class="imageFull" style="background-image:url('{{$banner->photo_translation}}')"><img src="{{$banner->photo_translation}}" alt=""></div>
+                @endif
+            </a>
+            </div>
+            @endif
+        @endforeach
+    </div>
+    <section class="mainContent mainContent--home">
+        <div class="container">
+            @if($bt = optional($blocks->get('ABOUT'))->first())
+                <div class="titleHeading" data-waypoint="100%">{{ $bt->name }}</div>
+                <div class="document active" data-waypoint="100%">
+                    <p>{!! $bt->description !!}</p>
+                </div>
+            @endif
+
+            <div class="titleHeading" data-waypoint="100%">{{trans('frontend.our_presence')}}</div>
+            <div class="innerourPresence" data-waypoint="100%">
+                <div class="row">
+                    <div class="col-xl-10 offset-xl-1 col-12">
+                        @if($bt = optional($blocks->get('OUR-PRESENCE-DESKTOP'))->first())
+                        <div class="ourPresenceMap ourPresenceMap--dt">
+                            <img src="{{ $bt->photo_translation }}" style="max-width: 100%;" alt="">
+                        </div>
+                        @endif
+                        @if($bt = optional($blocks->get('OUR-PRESENCE-MOBILE'))->first())
+                        <div class="ourPresenceMap ourPresenceMap--mb">
+                            <img src="{{ $bt->photo_translation }}" alt="" style="max-width: 100%;">
+                        </div>
+                        @endif
+                    </div>
+                </div>
+                <ul class="ourPresenceLocation clearfix" style="display:none">
+                   @foreach($composer_project_category as $item)
+                        <li class="ourPresenceLocation__item">
+                            <a class="colorReady" href="{{route('frontend.project_category_detail',['slug'=>$item->slug])}}">
+                                <i class="icon" style="background: url('{{$item->icon}}') no-repeat;"></i>
+                                <span>{{$item->name}}</span>
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+            <div class="innerourPresence" data-waypoint="100%">
+                <div class="ourPresenceExpand">
+                    <div id="accordion">
+                        @foreach($branches as $index=>$province)
+                            <div class="card">
+                                <div class="card-header" id="heading{{$index}}">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{$index}}" aria-expanded="true" aria-controls="collapse{{$index}}">{{ $province[0]->city->name }}<span> <i class="ic_arrow_expand"></i></span></button>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="collapse{{$index}}" aria-labelledby="heading{{$index}}" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <ul class="expandInfo">
+                                            @foreach($province as $item)
+                                                <li class="expandInfo__item">{{$item->name}}</a>
+                                                    <span>
+                                                        @foreach($item->branch_project_categories as $value)
+                                                        <a href="{{$value->project ? route('frontend.project_detail',['slug'=>$value->project->slug]) : route('frontend.project_category_detail',['slug'=>$value->project_category->slug]) }}">
+                                                            <i class="icon" style="background: url('{{$value->project_category->icon}}') no-repeat center"></i></a>
+                                                        @endforeach
+                                                    </span>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            <div class="titleHeading" data-waypoint="100%">{{ getPageUrlByCode('PROPERTY-FOR-LEASE', 'title') }}</div>
+            <div class="mediaEffect" data-waypoint="100%">
+                <div class="searchLease">
+                    <form class="form-style" id="form-filter" method="get" action="{{ getPageUrlByCode('PROPERTY-FOR-LEASE') }}">
+                        {{ csrf_field() }}
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select class="selectpicker show-tick" onchange="$('#form-filter').submit()" name="category_id" title="{{trans('frontend.select_property_type')}}">
+                                        <option value="">{{trans('frontend.all')}}</option>
+                                        @foreach($composer_project_category as $item)
+                                            <option value="{{$item->id}}" {{request('category_id') == $item->id ? 'selected' : ''}}>{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select class="selectpicker show-tick" onchange="$('#form-filter').submit()" name="city_id" title="{{trans('frontend.select_region')}}">
+                                        @foreach($cities as $item)
+                                            <option value="{{$item->id}}" {{request('city_id') == $item->id ? 'selected' : ''}}>{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <button class="btn-clear btn btn-submit" type="button" id="btn-clear" ><i class="fa fa-times"></i>{{trans('frontend.clear')}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="listLease mediaEffect-2" data-waypoint="100%">
+                <div class="row">
+                    @foreach($projects as $item)
+                    <div class="col-md-4 col-6 break360">
+                        <div class="listLease__item">
+                            <div class="listLease__item__image">
+                                <div class="image effectImg"><a style="background-image:url('{{$item->thumbnail}}')" href="{{route('frontend.project_detail',['slug'=>$item->slug])}}"><img src="{{$item->thumbnail}}"></a></div>
+                                <h4>{{$item->category->name}}</h4>
+                            </div>
+                            <div class="info"><a class="title" href="{{route('frontend.project_detail',['slug'=>$item->slug])}}">{{$item->name}}</a>
+                                <div class="name">
+                                    <h5>{{$item->contact_person}}</h5>
+                                    <p>{{trans('contact.tel')}} : {{$item->phone}}</p>
+                                </div><a class="btn-link btn-gray" href="{{route('frontend.project_detail',['slug'=>$item->slug])}}">
+                                    {{trans('frontend.learn_more')}} <i class="ic-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="text-center">
+                    <a class="btnLink" href="javascript:void(0)" onclick="$('#form-filter').submit()">{{ trans('frontend.learn_about_other_properties') }}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="gridPartner" style="margin-top: 50px;" data-waypoint="100%">
+                <h3>{{trans('frontend.our_partner')}}</h3>
+                <div class="slidePartner">
+                    @foreach($partners as $partner)
+                        <div class="slidePartner__wrap"><a href="{{ $partner->link }}" title="{{ $partner->name }}" target="_blank"></a>
+                            <div>
+                                <div class="slidePartner__item"><img src="{{$partner->logo}}" alt="{{ $partner->name }}"></div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
+
+@section('script')
+@endsection

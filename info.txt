@@ -1,0 +1,5 @@
+[bwid.3forcom.net - Server] 
+* Domain: bwid.3forcom.net
+* FTP: 128.199.71.195 - User/pass: bwid_3forcom_net / Rt-DxMZbqd8a
+* PhpMyAdmin: http://ney.3forcom.biz/pma
+* Databases: bwid_3forcom_net / V9bX0F2H  

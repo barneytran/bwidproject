@@ -1,0 +1,21 @@
+<?php
+return [
+    'title' => '방문 등록',
+    'name' => '신청자 성명',
+    'phone' => '전화',
+    'company' => '회사',
+    'email' => '이메일',
+    'content' => '함유량',
+    'target' => '방문 목적',
+    'business' => '비즈니스 서비스',
+    'country' => '원산지',
+    'country_other' => '기타 국가',
+    'number_people' => '방문자 수',
+    'select' => '- 선택 -',
+    'from' => '에서',
+    'to' => '에',
+    'register_time' => '방문 날짜',
+    'select_date' => '- 날짜 선택 -',
+    'target_other' => '기타',
+    'note' => '메모',
+];

@@ -1,0 +1,28 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'contact';
+block content
+    +bgImg('/images/contact/bg-contact.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='#') Home
+                        li.breadcrumb-item.active(aria-current='page') Contact us
+    section.mainContact
+        .container
+            h1.titleHeading(data-waypoint="100%") Contact US
+            .innerContact(data-waypoint="100%") 
+                .row
+                    .col-md-6.col-12
+                        .formContact
+                            include modules/_formContact
+                    .col-md-6.col-12
+                        .formLocation
+                            h3.titleHeading.titleHeading--medium BW INDUSTRIAL DEVELOPMENT JSC 
+                            include modules/_formLocation

@@ -1,0 +1,46 @@
+<?php
+return [
+    'form_title' => '私達にメールを送ってください',
+    'name' => 'フルネーム',
+    'phone' => '電話番号',
+    'tel' => '電話番号',
+    'email' => 'Email',
+    'address' => '住所',
+    'address_info' => 'アドレス情報',
+    'content' => 'メッセージ',
+    'business_team' => '事業チーム',
+    'marketing_team' => 'マーケティングチーム',
+    'send_us_message' => 'メッセージを送ってください',
+    'send_us_message_description' => '何か提案やサポートがあれば,ここにメッセージをお願いします。',
+    'company' => '会社名',
+    'company_profile' => '更に詳細な情報がご必要な場合は、ご連絡下さい。',
+    'information' => 'Information',
+    'anlacgiao_company' => 'アンラックジアオサービスカンパニーリミテッド',
+    'enter_name' => '名前を入力',
+    'enter_telephone' => '電話番号を入力',
+    'enter_company' => '会社に入る',
+    'enter_subject' => '件名を入力',
+    'enter_message' => 'メッセージを入力してください...',
+    'note' => 'Note',
+    'note_description' => ':min  - :max の文字数で入力してください。',
+
+    'enquiry' => '照会',
+    'enquiries' => 'お問い合わせ',
+    'how_did_you_hear_about_us' => 'あなたは私たちについてどのように知りましたか？',
+    'project_interested_in' => "あなたが興味を持っているプロジェクトですか？",
+
+    'full_name' => 'フルネーム',
+    'message' => 'Message',
+    'first_name' => '姓の入力',
+    'last_name' => '姓の入力',
+    'country' => '国を入力',
+    'requirements_detail' => '要求の詳細',
+    'register_next' => '帝国市の次の段階の打ち上げで更新されたいのですが',
+
+    'find_us' => '私達を見つけて',
+    'sales_office' => '営業所',
+    'show_units_office' => 'エンパイアシティセールスギャラリーショーユニット',
+
+    'contact_person' => '連絡担当者',
+    'email_us' => '私達に電子メールを送りなさい'
+];

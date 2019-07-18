@@ -1,0 +1,30 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'businesses';
+    - var mainActive = 'propertytype';
+    - var mainActive = 'ready';
+block content
+    +bgImg(imgDataPath + 'property-type/bg-logistic.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='/our-business') Our business
+                        li.breadcrumb-item
+                            a(href='/property-type') Property Type
+                        li.breadcrumb-item.active(aria-current='page') Ready-built factory
+    section.mainLogistic
+        .container
+            h1.titleHeading(data-waypoint="100%") Ready-built factory
+            .document(data-waypoint="100%")
+                p We aim to satisfy the rising demand for modern Ready-built factory in Vietnam. Our land locations offers different warehouse purposes with proximity to Hanoi & HCMC international airports as well as to international maritime gateway of the North (Hai Phong) & South (Dong Nai).
+            section.logisticList(data-waypoint="100%")
+                include modules/_logisticList
+                include modules/_pagination

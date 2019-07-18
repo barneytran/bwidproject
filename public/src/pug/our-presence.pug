@@ -1,0 +1,106 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'ourpresence';
+block content
+    +bgImg(imgDataPath + 'business-model/bg-business-model.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='/our-business') Our business
+                        li.breadcrumb-item.active(aria-current='page') Our presence
+    section.ourPresence
+        .container
+            h1.titleHeading(data-waypoint="100%") Our Presence
+            .innerourPresence(data-waypoint="100%")
+                .row
+                    .col-xl-10.offset-xl-1.col-12
+                        .ourPresenceMap.ourPresenceMap--dt
+                            img(src="../images/our-presence/map.png", alt="")
+                            .ourPresenceMap__wrapper
+                                ul.ourPresenceIP
+                                    li.ourPresenceIP__item.clearfix
+                                        a(href="#")
+                                            | VSIP Bac Ninh IP
+                                        span 
+                                            a(href="#"): i.icon.ic_rbf
+                                            a(href="#"): i.icon.ic_btsp
+                                            a(href="#"): i.icon.ic_rbf
+                                            a(href="#"): i.icon.ic_btsp
+                                    li.ourPresenceIP__item.clearfix
+                                        a(href="#" target="_blank")
+                                            | VSIP Bac Ninh 2 IP
+                                        span
+                                                a(href="#"): i.icon.ic_lw
+                            .ourPresenceMap__wrapper.ourPresenceMap__wrapper--1
+                                ul.ourPresenceIP.ourPresenceIP--1
+                                    li.ourPresenceIP__item.clearfix
+                                        a(href="#" target="_blank")
+                                            | VSIP Hai Duong IP
+                                        span 
+                                            a(href="#"): i.icon.ic_rbf
+                                            a(href="#"): i.icon.ic_lw
+                            .ourPresenceMap__wrapper.ourPresenceMap__wrapper--2
+                                ul.ourPresenceIP
+                                    li.ourPresenceIP__item.clearfix
+                                        a(href="#" target="_blank")
+                                            | VSIP Hai Phong IP
+                                        span 
+                                            a(href="#"): i.icon.ic_rbf
+                                            a(href="#"): i.icon.ic_btsp
+                            .ourPresenceMap__wrapper.ourPresenceMap__wrapper--3
+                                ul.ourPresenceIP.ourPresenceIP--2
+                                    li.ourPresenceIP__item.clearfix
+                                        a(href="#" target="_blank")
+                                            | Bang Bau IP
+                                        span 
+                                            a(href="#"): i.icon.ic_rbf
+                                            a(href="#"): i.icon.ic_salb
+                                    li.ourPresenceIP__item.clearfix
+                                        a(href="#" target="_blank")
+                                            | My Phuoc 3 IP
+                                        span 
+                                            a(href="#"): i.icon.ic_rbf
+                                            a(href="#"): i.icon.ic_salb
+                                    li.ourPresenceIP__item.clearfix
+                                        a(href="#" target="_blank")
+                                            | VSIP II IP
+                                        span 
+                                                a(href="#"): i.icon.ic_rbf
+                            .ourPresenceMap__wrapper.ourPresenceMap__wrapper--4
+                                ul.ourPresenceIP
+                                    li.ourPresenceIP__item.clearfix
+                                        a(href="#" target="_blank")
+                                            | Nhon Trach IP
+                                        span 
+                                            a(href="#"): i.icon.ic_rbf
+                                            a(href="#"): i.icon.ic_lw
+                        .ourPresenceMap.ourPresenceMap--mb
+                            img(src="../../images/our-presence/map-mb.png", alt="" style="max-width: 100%;")
+
+                ul.ourPresenceLocation.clearfix
+                    li.ourPresenceLocation__item
+                        a(href="ready-built-factory.html").colorReady
+                            i.icon.ic_rbf
+                            span Ready-built factories
+                    li.ourPresenceLocation__item
+                        a(href="logistics-warehouses.html").colorLogistic
+                            i.icon.ic_lw
+                            span Logistics warehouses
+                    li.ourPresenceLocation__item
+                        a(href="built-to-suit-project.html").colorBuilt
+                            i.icon.ic_btsp
+                            span Built-To-Suit Projects
+                    li.ourPresenceLocation__item
+                        a(href="sale-and-lease-back.html").colorSale
+                            i.icon.ic_salb
+                            span Sale and Lease back
+            include ./modules/_ourPrecenseExpand
+                                            

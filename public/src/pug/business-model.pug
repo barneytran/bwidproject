@@ -1,0 +1,25 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'businesses';
+    - var mainActive = 'businessesmodel';
+block content
+    +bgImg(imgDataPath + 'business-model/bg-business-model.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='/our-business') Our business
+                        li.breadcrumb-item.active(aria-current='page') Business model
+    section.businessModel
+        .container
+            h1.titleHeading(data-waypoint="100%") business model
+            .document(data-waypoint="100%")
+                p Our road to number 1 is riding on 3 solid guiding principles of BW Industrial
+            include modules/_businessFeatures

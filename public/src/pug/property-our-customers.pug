@@ -1,0 +1,59 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'leasing-2';
+block content
+    +bgImg(imgDataPath + 'lease/our-customers.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='/') Property leasing    
+                        li.breadcrumb-item.active(aria-current='page') Our Customers
+    section.ourLeasing
+        .container
+            h1.titleHeading(data-waypoint="100%") Our Customers
+            .document.mediaEffect(data-waypoint="100%")
+                p BW Industrial’s focus is to support the sustainable development of Vietnam’s industrial upgrade and become a critical player in the global supply chain. With an objective of providing value added real estate services to key sectors through our joint venture platform, BW Industrial is committed to provide our clients the first-class modern real estate solutions for investors and industries such as auto, electronics, leather shoes, garments and textiles...
+                .row.align-items-center
+                    .col-md-6.col-12
+                        blockquote
+                            h4 WE ARE THERE TO <br/>HELP YOU FROM <br/>DAY ONE
+                            h4 AND<br/>WE HAVE THE EXPERTISE
+                    .col-md-6.col-12
+                        img(src=imgDataPath + "lease/customer.png")
+    section.ourLeasing.ourLeasing--gray.mediaEffect-2(data-waypoint="100%")
+        .container
+            .titleWrap.text-center
+                h4.titleHeadingDetail Our Customers
+            .row
+                .col-md-4.col-6.break360      
+                    .item__logo
+                        div
+                            img(src=imgDataPath + "lease/logo1.png")
+                .col-md-4.col-6.break360      
+                    .item__logo
+                        div
+                            img(src=imgDataPath + "lease/logo2.png")
+                .col-md-4.col-6.break360      
+                    .item__logo
+                        div
+                            img(src=imgDataPath + "lease/logo3.png")
+                .col-md-4.col-6.break360      
+                    .item__logo
+                        div
+                            img(src=imgDataPath + "lease/logo4.png")
+                .col-md-4.col-6.break360      
+                    .item__logo
+                        div
+                            img(src=imgDataPath + "lease/logo5.png")
+                .col-md-4.col-6.break360      
+                    .item__logo
+                        div
+                            img(src=imgDataPath + "lease/logo6.png")

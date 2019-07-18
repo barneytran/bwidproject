@@ -1,0 +1,421 @@
+$color-our-ready: #104d7f;
+$color-our-logistic: #00a8df;
+$color-our-built: #df4900;
+$color-our-sale: #889399;
+
+.ourPresence {
+    padding-bottom: rem(130);
+
+    @include media-breakpoint-down(md) {
+        padding-bottom: rem(30);
+    }
+
+}
+
+.ourPresenceMap {
+    margin-bottom: rem(80);
+
+    // padding-left: 655px;
+    // background: url("../../images/our-presence/map.png") no-repeat;
+    // height: 852px;
+    &__wrapper {
+        position: absolute;
+        top: 28px;
+        right: 20px;
+        width: 265px;
+
+        &--1 {
+            top: 123px;
+        }
+
+        &--2 {
+            top: 180px;
+        }
+
+        &--3 {
+            top: 570px;
+        }
+
+        &--4 {
+            top: 710px;
+        }
+    }
+
+    .ourPresenceIP {
+        padding: 0;
+        list-style-type: none;
+        margin: 0;
+        width: 400px;
+
+        &--1 {
+            padding-top: 0;
+            margin-top: rem(-10);
+        }
+
+        &--2 {
+            .ourPresenceIP {
+                &__item {
+                    padding: rem(5) 0;
+                }
+            }
+        }
+
+        &__item {
+            position: relative;
+            padding: rem(8) 0;
+
+            > a {
+                color: $color_link;
+                font-weight: 700;
+                // float: left;
+                 width: 50%;
+               // padding-right: 50%;
+                overflow: hidden;
+                display: block;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                @include transition();
+
+                &:hover {
+                    color: $color-hover;
+                    text-decoration: none;
+                }
+            }
+
+            span {
+                // float: left;
+                 width: 50%;
+                padding-left: rem(40);
+                position: absolute;
+                top: rem(3);
+                right: 0;
+                >a{
+
+                }
+                .icon {
+                    width: 24px;
+                    height: 27px;
+                    display: inline-block;
+                    vertical-align: bottom;
+                    margin: 0 8px 5px;
+
+                    &.ic_rbf {
+                        background: url($image-path + "icons/ic_rbf.png") no-repeat center;
+                    }
+
+                    &.ic_lw {
+                        background: url($image-path + "icons/ic_lw.png") no-repeat center;
+                    }
+
+                    &.ic_btsp {
+                        background: url($image-path + "icons/ic_btsp.png") no-repeat center;
+                    }
+
+                    &.ic_salb {
+                        background: url($image-path + "icons/ic_salb.png") no-repeat center;
+                    }
+                }
+            }
+        }
+    }
+
+    &--dt {
+        display: block;
+
+        @media (max-width: 991.98px) {
+            display: none;
+        }
+    }
+
+    &--mb {
+        display: none;
+
+        @media (max-width: 991.98px) {
+            display: block;
+        }
+    }
+}
+
+.ourPresenceLocation {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ecf1f5;
+    &__item {
+        // width: 25%;
+        // float: left;
+        background-color: #ecf1f5;
+        padding: rem(15) 0;
+        flex: 0 0 25%;
+        max-width: 25%;
+        i {
+            margin-left: 15px;
+            margin-right: 8px;
+            vertical-align: bottom;
+            width: 24px;
+            height: 27px;
+            display: inline-block;
+
+            &.ic_rbf {
+                background: url($image-path + "icons/ic_rbf.png") no-repeat center;
+            }
+
+            &.ic_lw {
+                background: url($image-path + "icons/ic_lw.png") no-repeat center;
+            }
+
+            &.ic_btsp {
+                background: url($image-path + "icons/ic_btsp.png") no-repeat center;
+            }
+
+            &.ic_salb {
+                background: url($image-path + "icons/ic_salb.png") no-repeat center;
+            }
+        }
+
+        a {
+            font-family: "Futura";
+            font-weight: 800;
+            font-size: rem(16);
+            letter-spacing: (75/1000)*1rem;
+
+            &.colorReady {
+                color: $color-our-ready;
+            }
+
+            &.colorLogistic {
+                color: $color-our-logistic;
+            }
+
+            &.colorBuilt {
+                color: $color-our-built;
+            }
+
+            &.colorSale {
+                color: $color-our-sale;
+            }
+        }
+    }
+}
+html[lang="vi"]{
+    .ourPresenceLocation__item{
+        flex: 0 0 auto;
+        max-width: inherit;
+        //padding-right: 20px;
+        @media (max-width: 992px){flex: 0 0 50%;
+            max-width: 50%;}
+            @media (max-width: 560px){flex: 0 0 100%;
+                max-width: 100%;}
+    }
+}
+.ourPresenceExpand {
+    display: none;
+
+    .card {
+        padding: rem(10) 0;
+        border: 0;
+
+        &-header {
+            border-bottom: 0;
+            background-color: #ecf1f5;
+
+            .btn {
+                font-weight: 700;
+                padding-left: 0;
+                color: #17aee0;
+                display: block;
+                width: 100%;
+                text-align: left;
+                position: relative;
+                text-decoration: none;
+
+                span {
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translate(0, -50%);
+
+                    i {
+                        &::before {
+                            content: "";
+                            display: block;
+                            height: 10px;
+                            width: 10px;
+                            margin-right: 10px;
+                            border: 1px solid #17aee0;
+                            border-width: 0 1px 1px 0;
+                            -webkit-transform: rotate(225deg);
+                            -ms-transform: rotate(225deg);
+                            transform: rotate(225deg);
+                            @include transition(0.4s all);
+                        }
+                    }
+                }
+
+                &.collapsed {
+                    font-weight: 700;
+                    color: #393939;
+
+                    span {
+                        top: 50%;
+                        transform: translate(0, -50%);
+
+                        i {
+                            &::before {
+                                content: "";
+                                display: block;
+                                height: 10px;
+                                width: 10px;
+                                margin-right: 10px;
+                                border: 1px solid #393939;
+                                border-width: 0 1px 1px 0;
+                                -webkit-transform: rotate(45deg);
+                                -ms-transform: rotate(45deg);
+                                transform: rotate(45deg);
+                                @include transition(0.4s all);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-body {
+            padding: 0 1.25rem;
+            border: 1px solid #ecf1f5;
+            border-top: 0;
+        }
+    }
+}
+
+.expandInfo {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+
+    &__item {
+        position: relative;
+        padding: rem(10) 0;
+        border-bottom: 1px solid #ecf1f5;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        > a {
+            color: #393939;
+            font-weight: 700;
+            text-decoration: none;
+            display: block;
+            width: 55%;
+            
+        }
+        span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 45%;
+            text-align: right;
+            .icon {
+                width: 24px;
+                height: 27px;
+                display: inline-block;
+                vertical-align: bottom;
+                margin: 0 2px;
+
+                &.ic_rbf {
+                    background: url($image-path + "icons/ic_rbf.png") no-repeat center;
+                    background-size: 16px;
+                }
+
+                &.ic_lw {
+                    background: url($image-path + "icons/ic_lw.png") no-repeat center;
+                    background-size: 16px;
+                }
+
+                &.ic_btsp {
+                    background: url($image-path + "icons/ic_btsp.png") no-repeat center;
+                    background-size: 16px;
+                }
+
+                &.ic_salb {
+                    background: url($image-path + "icons/ic_salb.png") no-repeat center;
+                    background-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .ourPresenceLocation {
+        &__item {
+            span {
+                font-size: rem(16);
+            }
+        }
+    }
+
+    .ourPresenceMap {
+        .ourPresenceIP {
+            width: 300px;
+            &--2{
+                .ourPresenceIP{
+                    &__item {
+                        padding: rem(8) 0;
+                    }
+                }
+            }
+            &__item {
+                span {
+                    .icon {
+                        margin: 0;
+                        &.ic_rbf {
+                            background-size: 16px;
+                        }
+
+                        &.ic_lw {
+                            background-size: 16px;
+                        }
+
+                        &.ic_btsp {
+                            background-size: 16px;
+                        }
+
+                        &.ic_salb {
+                            background-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .ourPresenceExpand {
+        display: block;
+    }
+
+    .ourPresenceLocation {
+        &__item {
+            flex: 0 0 50%;
+            max-width: 50%
+        }
+    }
+}
+
+@media (max-width: 389.98px) {
+    .ourPresenceLocation {
+        &__item {
+            flex: 0 0 100%;
+            max-width: 100%;
+            i {
+                margin-left: 0;
+            }
+        }
+    }
+}

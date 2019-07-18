@@ -1,0 +1,181 @@
+$color-title-heading: #104d7f;
+$bg-title-before: #00a8df;
+$bg-title-after: #d7d7d7;
+
+.titleHeading{
+    font-family: 'Futura';
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: rem(36);
+    color: $color-title-heading;
+    letter-spacing: (75/1000)*1rem;
+    position: relative;
+    margin-bottom: rem(50);
+    &::before, &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: rem(-29);
+        left: 0;
+    }
+    &::before{
+        background-color: $bg-title-before;
+        width: rem(93);
+        height: rem(3);
+        bottom: rem(-30);
+        z-index: 1;
+    }
+    &::after{
+        background-color: $bg-title-after;
+        width: rem(316);
+        height: rem(1);
+    }
+    &--medium{
+        font-size: rem(24);
+        margin-bottom: rem(10);
+        &::before, &::after{
+            display: none;
+        }
+    }
+    &--content{
+        text-transform:inherit;
+        font-size:rem(36);
+        &:after{
+            width: 100%;
+        }
+
+    }
+    &--news{
+        position:relative;
+        font-size:rem(20);
+        font-family:$font-custom;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 0.75px;
+        padding-left: rem(20);
+        @include media-breakpoint-up(sm) {
+            margin-bottom: rem(30);
+        }
+        &:before{
+            content: '';
+            position: absolute;
+            width: 0.5625rem;
+            height: 0.875rem;
+            top: rem(10);
+            left: 1px;
+            background: $color-hover;
+            -webkit-clip-path: polygon(60% 0%, 100% 0%, 40% 100%, 0% 100%);
+            clip-path: polygon(60% 0%, 100% 0%, 40% 100%, 0% 100%);
+        }
+        &.colorMain{
+            color: #00a8df;
+            margin-bottom: 1.875rem;
+        }
+    }
+    &--link{
+       
+        @include media-breakpoint-up(sm) {
+            text-align:right;
+        }
+        @include media-breakpoint-down(xs) {
+            //margin-bottom: rem(20);
+            margin-top:rem(10);
+        }
+    }
+    @media (max-width: 359.98px){
+        &::after{
+            width: 100%;;
+        }
+    }
+}
+
+.titleHeadingDetail{
+    font-family: "Futura";
+    font-weight: 800;
+    font-size: rem(20);
+    letter-spacing: (75/1000)*1rem;
+    color: $color-title-heading;
+    margin-bottom: rem(70);
+    position: relative;
+    &::before, &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -30px;
+        height: 1px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    &::before{
+        background-color: $bg-title-before;
+        width: rem(93);
+        z-index: 1;
+    }
+    &::after{
+        background-color: $bg-title-after;
+        width: rem(316);
+    }
+    @media (max-width: 359.98px){
+        &::after{
+            width: 100%;;
+        }
+    }
+}
+
+.titleIcon{
+    font-family: 'Futura';
+    font-weight: 800;
+    text-transform: capitalize;
+    font-size: rem(20); 
+    color: $color-title-heading;
+    letter-spacing: (75/1000)*1rem;
+    position: relative;
+    &::before, &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: rem(-20);
+        left: 0;
+    }
+    &::before{
+        background-color: $bg-title-before;
+        width: rem(93);
+        height: rem(3);
+        bottom: rem(-21);
+        z-index: 1;
+    }
+    &::after{
+        background-color: $bg-title-after;
+        width: rem(316);
+        height: rem(1);
+    }
+    span{
+        position: relative;
+        padding-left: rem(20);
+        &::before{
+            content: '';
+            position: absolute;
+            width: rem(11);
+            height: rem(14);
+            top: 10px;
+            left: 0;
+            background: #00a8df;
+            -webkit-clip-path: polygon(60% 0%, 100% 0%, 40% 100%, 0% 100%);
+            clip-path: polygon(60% 0%, 100% 0%, 40% 100%, 0% 100%);
+        }
+    }
+    &--location{
+        font-size: rem(12);
+        text-transform: uppercase;
+        &::before, &::after{
+            display: none;
+        }
+        span{
+            &::before{
+                width: rem(9);
+                top: 0;
+            }
+        }
+    }
+}

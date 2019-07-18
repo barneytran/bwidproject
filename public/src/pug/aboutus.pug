@@ -1,0 +1,58 @@
+extends layouts/_layout_default
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'aboutus';
+    - var mainActive = 'ourcompany';
+block content
+    +bgImg(imgDataPath + 'BWID-About-Our-Company.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='#') Home
+                        li.breadcrumb-item
+                            a(href='#') About us 
+                        li.breadcrumb-item.active(aria-current='page') Our company
+    section.mainContact
+        .container
+            h1.titleHeading(data-waypoint="100%") Our Company
+            .document(data-waypoint="100%")
+                p Warburg Pincus, leading global private equity firm focused on growth investing, and Becamex IDC Corp, the largest industrial real estate developer in Vietnam, announced today the official launch of their joint venture BW Industrial Development Joint Stock Company (“BW Industrial”) in Vietnam.
+                p With over 2,000,000 square meters of projects under development and initial investment of over US$200 million, BW Industrial is the largest ‘for-rent’ industrial and logistics developer in Vietnam. 
+            .logisticList(data-waypoint="100%")
+                .row
+                    .col-md-3.col-sm-6.col-12
+                        .logisticList__item
+                            +bgImgLink(imgDataPath + 'aboutus/img1.jpg','image effectImg',url + '/logistics-warehouses.html')
+                            .info
+                                .info__inner
+                                    a(href= url + "/logistics-warehouses.html") 
+                                        | Logistics warehouse
+                                        i.ic_logistic_arrow
+                    .col-md-3.col-sm-6.col-12
+                        .logisticList__item
+                            +bgImgLink(imgDataPath + 'aboutus/img2.jpg','image effectImg', url + '/ready-built-factory.html')
+                            .info
+                                .info__inner
+                                    a(href= url + "/ready-built-factory.html") 
+                                        | Ready-built factory
+                                        i.ic_logistic_arrow
+                    .col-md-3.col-sm-6.col-12
+                        .logisticList__item
+                            +bgImgLink(imgDataPath + 'aboutus/img3.jpg','image effectImg', url + '/built-to-suit-project.html')
+                            .info
+                                .info__inner
+                                    a(href= url + "/built-to-suit-project.html") 
+                                        | Build-to-suit Project
+                                        i.ic_logistic_arrow
+                    .col-md-3.col-sm-6.col-12
+                        .logisticList__item
+                            +bgImgLink(imgDataPath + 'aboutus/img4.jpg','image effectImg', url + '/sale-and-lease-back.html')
+                            .info
+                                .info__inner
+                                    a(href= url + "/sale-and-lease-back.html") 
+                                        | Sale and lease back
+                                        i.ic_logistic_arrow

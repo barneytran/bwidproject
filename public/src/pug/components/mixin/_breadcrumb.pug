@@ -1,0 +1,31 @@
+mixin breadcrumb(title, background, links, style)
+    - title         = title || 'Easy credit'
+    - background    = background || ''
+    - links         = links || []
+    - style         = style || ''
+    if(background != '') 
+       - background = "background-image: url(" + imgDataPath + background + ")"
+
+    if(style != '') 
+       - style = "breadcrumbs--" + style
+
+    section.breadcrumbs(class=style style= background, data-paroller-factor="0.4", data-paroller-factor-xs="0.2", data-paroller-factor-sm="0.3")
+        .container.text-center
+            h1= title
+
+            nav(aria-label="breadcrumb")
+                ol.breadcrumb
+                    li.breadcrumb-item
+                        a(href=url + "/", title='Trang chủ') Trang chủ
+
+                    each link, index in links
+                        if(index < links.length - 1)
+                            li.breadcrumb-item
+                                if(links)
+                                    a(href=link.link, title=link.title)= link.title
+                                else
+                                    = link.title
+                        else 
+                            li.breadcrumb-item.active(aria-current="page")= link.title
+
+

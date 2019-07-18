@@ -1,0 +1,77 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'gallery-1';
+block content
+    +bgImg(imgDataPath + 'news/media-center-detail.jpg','bgBanner  bgBanner--news')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='#') Media Center 
+                        li.breadcrumb-item
+                            a(href='#') Gallery    
+                        li.breadcrumb-item
+                            a(href='#') Photo  
+                        li.breadcrumb-item.active(aria-current='page') BW Industrial Official Launch
+    section.ourNewsDetail
+        .container
+            h1.titleHeading.titleHeading--content(data-waypoint="100%") BW Industrial Official Launch
+            .mediaEffect(data-waypoint="100%")
+                .row
+                    .col-md-5
+                        .date 
+                            i.fa.fa-calendar
+                            | 11-09-2018
+                    .col-md-7
+                        .share
+                            span.lbl Share
+                            a(href="#"): i.fa.fa-facebook
+                            a(href="#"): i.fa.fa-linkedin
+                            a(href="#"): i.fa.fa-google-plus
+                .slideDetail.slideDetailVideo
+                        .slideDetailVideo__inner
+                            +bgImg(imgDataPath + 'news/img-video.jpg','image imageEffect')
+                            a(href="javascript:void(0)").playVideo#play01
+                                i
+                            iframe#video01.videoInner(width='100%', height='100%', src='https://www.youtube.com/embed/LXb3EKWsInQ?enablejsapi=1&showinfo=0&rel=0', frameborder='0', gesture='media', allow='encrypted-media', allowfullscreen='')
+                script.
+                    var player01;
+                    function onYouTubePlayerAPIReady() {
+                        player01 = new YT.Player('video01', {
+                            events: {
+                                'onReady': onPlayerReady
+                                //'onStateChange': onPlayerStateChange
+                            }
+                        });
+                    }
+                    function onPlayerReady(event) {
+
+                        var playButton01 = document.getElementById("play01");
+                            playButton01.addEventListener("click", function() {
+                                player01.playVideo();
+                                this.parentElement.className += " showvideo";
+                            });
+                        
+                    }
+                     // Inject YouTube API script
+                    var tag = document.createElement('script');
+                        tag.src = "//www.youtube.com/player_api";
+                    var firstScriptTag = document.getElementsByTagName('script')[0];
+                        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            .relativeBox.mediaEffect-2(data-waypoint="100%")
+                .titleHeading--news related videos
+                .gridNews--2.gridNewsPhoto.gridNewsVideo.slideNews   
+                    +newsItemSlide(imgDataPath + 'news/img7.jpg',url + 'media-center-news-video-detail.html','otherstyle')
+                    +newsItemSlide(imgDataPath + 'news/img9.jpg',url + 'media-center-news-video-detail.html','otherstyle')
+                    +newsItemSlide(imgDataPath + 'news/img10.jpg',url + 'media-center-news-video-detail.html','otherstyle')
+                    +newsItemSlide(imgDataPath + 'news/img8.jpg',url + 'media-center-news-video-detail.html','otherstyle')
+                    +newsItemSlide(imgDataPath + 'news/img9.jpg',url + 'media-center-news-video-detail.html','otherstyle')
+                    +newsItemSlide(imgDataPath + 'news/img10.jpg',url + 'media-center-news-video-detail.html','otherstyle')

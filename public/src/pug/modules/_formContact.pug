@@ -1,0 +1,34 @@
+form#contactForm
+    .row
+        .col-12
+            .form-group
+                select.selectpicker.show-tick(title="Subject *")
+                    option Employment
+                    option Media Inquiry
+                    option Investor Relations
+                    option Property For Lease Request
+                    option Others
+        .col-lg-6.col-12
+            .form-group
+                input(type="text" class="form-control" id="name" name="name" placeholder="Name *") 
+        .col-lg-6.col-12
+            .form-group
+                input(type="text" class="form-control" id="tel" name="tel" placeholder="Tel *") 
+        .col-lg-6.col-12
+            .form-group
+                input(type="email" class="form-control" id="email" placeholder="Email") 
+        .col-lg-6.col-12
+            .form-group
+                input(type="text" class="form-control" id="companyname" placeholder="Company name") 
+        .col-12
+            .form-group
+                textarea(class="form-control" id="companyprofile" rows="4" placeholder="Company Profile")
+        .col-12
+            .form-group
+                textarea(class="form-control" id="infomation" rows="4" placeholder="Infomation")
+        .col-lg-8.col-12
+            .g-recaptcha(data-sitekey="6Le0d20UAAAAALg_TeGEK1cnnxRTUPTuui3PEb9B")
+        .col-lg-4.col-5.d-flex.align-items-center
+            button(type="submit" class="btn btn-submit") 
+                i.icon.fa.fa-long-arrow-right
+                | Submit

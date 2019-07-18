@@ -1,0 +1,243 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'career-2';
+block content
+    +bgImg(imgDataPath + 'career/bg-career-model-2.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='/') Careers  
+                        li.breadcrumb-item.active(aria-current='page') Current Openings
+    section.ourCareer
+        .container
+            h1.titleHeading(data-waypoint="100%") Current Openings
+            //search
+            .searchJob.mediaEffect-2(data-waypoint="100%")
+                form().form-style
+                    .row
+                        .col-md-3
+                            .form-group
+                                input(type="text" class="form-control"  placeholder="Enter job title, position... ") 
+                        .col-md-3
+                            .form-group
+                                select.selectpicker.show-tick(title="Department")
+                                    option Department
+                        .col-md-3
+                            .form-group
+                                select.selectpicker.show-tick(title="Locations")
+                                    option Locations
+                        .col-md-3
+                            .form-group
+                                button.btn-search.btn.btn-submit
+                                    i.fa.fa-search
+                                    | Search
+            //list career
+            .careerList.loadMoreGroup.mediaEffect-3(data-waypoint="100%")
+                .careerList__item.showBox
+                    .row
+                        .col-md-6.col-12
+                            .title
+                                a(href= url + "/career-detail.html") Planning Manager
+                        .col-md-2.col-4.break360
+                            .branch
+                                i.fa.fa-briefcase
+                                | Bussiness
+                        .col-md-2.col-4.break360
+                            .add
+                                i.fa.fa-map-marker
+                                | Hanoi
+                        .col-md-2.col-4.break360
+                            a(href= url + "/career-detail.html").btn-view-2 View detail
+                .careerList__item.showBox
+                    .row
+                        .col-md-6.col-12
+                            .title
+                                a(href= url + "/career-detail.html") Sales & Marketing Internship
+                        .col-md-2.col-4.break360
+                            .branch
+                                i.fa.fa-briefcase
+                                | Marketing
+                        .col-md-2.col-4.break360
+                            .add
+                                i.fa.fa-map-marker
+                                | Hanoi
+                        .col-md-2.col-4.break360
+                            a(href= url + "/career-detail.html").btn-view-2 View detail
+                .careerList__item.showBox
+                    .row
+                        .col-md-6.col-12.break360
+                            .title
+                                a(href= url + "/career-detail.html") Sed do eiusmod tempor incididunt ut labore et dolore
+                        .col-md-2.col-4.break360
+                            .branch
+                                i.fa.fa-briefcase
+                                | Bussiness
+                        .col-md-2.col-4.break360
+                            .add
+                                i.fa.fa-map-marker
+                                | Hanoi
+                        .col-md-2.col-4.break360
+                            a(href= url + "/career-detail.html").btn-view-2 View detail
+                .careerList__item.showBox
+                    .row
+                        .col-md-6.col-12.break360
+                            .title
+                                a(href= url + "/career-detail.html") Eiusmod tempor incididunt ut labore et dolore
+                        .col-md-2.col-4.break360
+                            .branch
+                                i.fa.fa-briefcase
+                                | Bussiness
+                        .col-md-2.col-4.break360
+                            .add
+                                i.fa.fa-map-marker
+                                | Hanoi
+                        .col-md-2.col-4.break360
+                            a(href= url + "/career-detail.html").btn-view-2 View detail
+                .careerList__item.showBox
+                    .row
+                        .col-md-6.col-12.break360
+                            .title
+                                a(href= url + "/career-detail.html") Graphic Designer
+                        .col-md-2.col-4.break360
+                            .branch
+                                i.fa.fa-briefcase
+                                | Bussiness
+                        .col-md-2.col-4.break360
+                            .add
+                                i.fa.fa-map-marker
+                                | Hanoi
+                        .col-md-2.col-4.break360
+                            a(href= url + "/career-detail.html").btn-view-2 View detail
+                .careerList__item.showBox
+                    .row
+                        .col-md-6.col-12.break360
+                            .title
+                                a(href= url + "/career-detail.html") Dolor sit amet consectetur 
+                        .col-md-2.col-4.break360
+                            .branch
+                                i.fa.fa-briefcase
+                                | Bussiness
+                        .col-md-2.col-4.break360
+                            .add
+                                i.fa.fa-map-marker
+                                | Hanoi
+                        .col-md-2.col-4.break360
+                            a(href= url + "/career-detail.html").btn-view-2 View detail
+                .careerList__item.showBox
+                    .row
+                        .col-md-6.col-12.break360
+                            .title
+                                a(href= url + "/career-detail.html") Tempor incididunt ut labore et dolore 
+                        .col-md-2.col-4.break360
+                            .branch
+                                i.fa.fa-briefcase
+                                | Bussiness
+                        .col-md-2.col-4.break360
+                            .add
+                                i.fa.fa-map-marker
+                                | Hanoi
+                        .col-md-2.col-4.break360
+                            a(href= url + "/career-detail.html").btn-view-2 View detail
+                .careerList__item.showBox
+                    .row
+                        .col-md-6.col-12.break360
+                            .title
+                                a(href= url + "/career-detail.html") Lorem ipsum dolor sit amet consectetur
+                        .col-md-2.col-4.break360
+                            .branch
+                                i.fa.fa-briefcase
+                                | Bussiness
+                        .col-md-2.col-4.break360
+                            .add
+                                i.fa.fa-map-marker
+                                | Hanoi
+                        .col-md-2.col-4.break360
+                            a(href= url + "/career-detail.html").btn-view-2 View detail
+                .careerList__item.showBox
+                    .row
+                        .col-md-6.col-12.break360
+                            .title
+                                a(href= url + "/career-detail.html") Lorem ipsum dolor sit amet consectetur
+                        .col-md-2.col-4.break360
+                            .branch
+                                i.fa.fa-briefcase
+                                | Bussiness
+                        .col-md-2.col-4.break360
+                            .add
+                                i.fa.fa-map-marker
+                                | Hanoi
+                        .col-md-2.col-4.break360
+                            a(href= url + "/career-detail.html").btn-view-2 View detail
+                .careerList__item.showBox
+                    .row
+                        .col-md-6.col-12.break360
+                            .title
+                                a(href= url + "/career-detail.html") Lorem ipsum dolor sit amet consectetur
+                        .col-md-2.col-4.break360
+                            .branch
+                                i.fa.fa-briefcase
+                                | Bussiness
+                        .col-md-2.col-4.break360
+                            .add
+                                i.fa.fa-map-marker
+                                | Hanoi
+                        .col-md-2.col-4.break360
+                            a(href= url + "/career-detail.html").btn-view-2 View detail
+                .careerList__item.showBox
+                    .row
+                        .col-md-6.col-12.break360
+                            .title
+                                a(href= url + "/career-detail.html") Lorem ipsum dolor sit amet consectetur
+                        .col-md-2.col-4.break360
+                            .branch
+                                i.fa.fa-briefcase
+                                | Bussiness
+                        .col-md-2.col-4.break360
+                            .add
+                                i.fa.fa-map-marker
+                                | Hanoi
+                        .col-md-2.col-4.break360
+                            a(href= url + "/career-detail.html").btn-view-2 View detail
+                .careerList__item.showBox
+                    .row
+                        .col-md-6.col-12.break360
+                            .title
+                                a(href= url + "/career-detail.html") Lorem ipsum dolor sit amet consectetur
+                        .col-md-2.col-4.break360
+                            .branch
+                                i.fa.fa-briefcase
+                                | Bussiness
+                        .col-md-2.col-4.break360
+                            .add
+                                i.fa.fa-map-marker
+                                | Hanoi
+                        .col-md-2.col-4.break360
+                            a(href= url + "/career-detail.html").btn-view-2 View detail
+                .careerList__item.showBox
+                    .row
+                        .col-md-6.col-12.break360
+                            .title
+                                a(href= url + "/career-detail.html") Lorem ipsum dolor sit amet consectetur
+                        .col-md-2.col-4.break360
+                            .branch
+                                i.fa.fa-briefcase
+                                | Bussiness
+                        .col-md-2.col-4.break360
+                            .add
+                                i.fa.fa-map-marker
+                                | Hanoi
+                        .col-md-2.col-4.break360
+                            a(href= url + "/career-detail.html").btn-view-2 View detail
+                .text-center
+                    a(href="#" data-load="3" data-show="8").loadMore.btn-load Load more
+
+
+                            

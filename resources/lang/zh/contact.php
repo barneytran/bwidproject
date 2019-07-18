@@ -1,0 +1,46 @@
+<?php
+return [
+    'form_title' => '发送电子邮件给我们',
+    'name' => '全名',
+    'phone' => '电话号码',
+    'tel' => '电话',
+    'email' => '电子邮件',
+    'address' => '地址',
+    'address_info' => '地址信息',
+    'content' => '留言',
+    'business_team' => '业务团队',
+    'marketing_team' => '营销团队',
+    'send_us_message' => '发送美国留言',
+    'send_us_message_description' => '如果您有任何建议或支持,请在这里留言！',
+    'company' => '公司名称',
+    'company_profile' => '联系我们以了解更多相关信息',
+    'information' => '信息',
+    'anlacgiao_company' => 'An Lac Giao 服务有限公司',
+    'enter_name' => '输入名称',
+    'enter_telephone' => '输入电话',
+    'enter_company' => '输入公司',
+    'enter_subject' => '输入主题',
+    'enter_message' => '输入消息...',
+    'note' => '注意',
+    'note_description' => '请输入 :min  - :max 人物。',
+
+    'enquiry' => '询问',
+    'enquiries' => '查询',
+    'how_did_you_hear_about_us' => '你是怎么听说我们的？',
+    'project_interested_in' => '您感兴趣的项目？',
+
+    'full_name' => '全名',
+    'message' => '消息',
+    'first_name' => '输入名字',
+    'last_name' => '输入姓氏',
+    'country' => '输入国家',
+    'requirement_detail' => '需求详情',
+    'register_next' => '我希望在帝国城的下一阶段发布时得到更新。',
+
+    'find_us' => '找到我们',
+    'sales_office' => '销售办公室',
+    'show_units_office' => '帝国城市销售画廊展示单位',
+
+    'contact_person' => '联系人',
+    'email_us' => '给我们发电子邮件'
+];

@@ -1,0 +1,62 @@
+.businessFeatures{
+    padding: rem(10) 0;
+    margin-top:rem(20);
+    &__item{
+        margin-bottom: rem(30);
+        &__title{
+            font-family: "Futura";
+            font-weight: 800;
+            font-size: rem(20);
+            letter-spacing: (75/1000)*1rem;
+            position: relative;
+            margin-bottom: rem(25);
+            padding-left: rem(65); background-size: contain!important;
+        }
+        &__icon{
+            width: rem(53);
+            height: rem(49);
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            background-size: contain!important;
+            &.ic_1{
+                background: url($image-path + "icons/ic-business-1.svg") no-repeat center;
+            }
+            &.ic_2{
+                background: url($image-path + "icons/ic-business-2.svg") no-repeat center;
+            }
+            &.ic_3{
+                background: url($image-path + "icons/ic-business-3.svg") no-repeat center;
+            }
+        }
+        &__text{
+            text-align: justify;
+            line-height: (26/16);
+        }
+    }
+    .heading--3{
+        max-width: 500px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: rem(42);
+        //position: absolute;
+        line-height: (48/42);
+        color:#043482;
+         @include media-breakpoint-down(md) {
+            max-width: unset;
+            font-size: rem(30);
+        }
+    }
+    .image {
+        margin-top: -190px;
+        @include media-breakpoint-down(md) {
+            margin-top: rem(20);
+        }
+        
+    }
+    img{
+        max-width:100%;
+    }
+}

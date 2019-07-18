@@ -1,0 +1,38 @@
+$color-breadcrumb: #696969;
+$color-breadcrumb-active: #393939;
+$color-fill-before: #00a8df;
+
+.breadcrumb {
+    background-color: transparent;
+    padding-left: 0;
+    &-item {
+        font-size: rem(14);
+        letter-spacing: (25/1000)*1em;
+        .ic_home{
+            display: inline-block;
+            width: rem(20);
+            height: rem(16);
+            background: url($image-path + "/icons/ic_breadcrumb_home.png") no-repeat center;
+            vertical-align: middle;
+            margin-right: rem(15);
+            background-size: contain;
+        }
+        a{
+            color: $color-breadcrumb;
+            &:hover{
+                color:$color-hover;
+                text-decoration: none;
+            }
+        }
+        &.active {
+            color:$color-hover;
+            //color: $color-breadcrumb-active;
+            font-weight:bold;
+        }
+        + .breadcrumb-item{
+            &::before{
+                color: $color-fill-before;
+            }
+        }
+    }
+}

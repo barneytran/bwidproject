@@ -1,0 +1,139 @@
+mixin element(element, text)
+    - element = typeof element != "undefined" ? element : 'div'
+    - element = element != "" ? element : 'div'
+    #{element}&attributes(attributes)= text
+
+//background image
+mixin bgImg(image,className, altVal)
+    div(class=className style="background-image:url('" + image + "')")
+        img(src=image alt="")
+//background image for Link
+mixin bgImgLink(image,className,url,otherstyle)
+    unless otherstyle
+        div(class=className)
+            a(style="background-image:url('" + image + "')" href=url)
+                img(src=image alt="")
+    else
+        div(class=className)
+            a(style="background-image:url('" + image + "')" href=url)
+                img(src=image alt="")
+                i.ic-img
+//- accordion
+mixin accordion(id, className)
+    - className = typeof className != "undefined" ? className : ''
+    .panel-group(id=id, class=className, role="tabpanel", aria-multiselectable="true")
+        block
+//call mixin  +accordion(id)
+//- accordion-item
+mixin accordion-item(type,title,parent,expanded,titleContent,className)
+    -var id = title.replace(/\s+/g,"")
+    .panel(class="panel-" + type)
+        .panel-heading(role="tab", id="heading" + title)
+            h4.panel-title
+                a(data-toggle="collapse", class=className, data-parent="#" + parent, href="#collapse" + id, aria-expanded="true" ,aria-controls="collapseOne")
+                    span.icon-tab
+                    = titleContent
+        unless className
+            .panel-collapse.collapse.show(id="collapse" + id, role="tabpanel", aria-labelledby="heading" + title, data-parent="#" + parent)
+                .panel-body
+                    .media
+                        .media-body
+                            p Lorem ipsum dolor sit amet, vel ad mollis malorum, eu mei quod justo, aliquando urbanitas consectetuer ad ius. Ea sanctus lucilius mea, sea at numquam conclusionemque. Ne vim dicunt accommodare reprehendunt. Ei justo errem partiendo qui, quod labore praesent in pri. Pro utroque accumsan detracto no, et aliquid reprimique constituam quo.
+        else
+            .panel-collapse.collapse.in(id="collapse" + id, role="tabpanel", aria-labelledby="heading" + title, data-parent="#" + parent)
+                .panel-body
+                    .media
+                        .media-body
+                            p Lorem ipsum dolor sit amet, vel ad mollis malorum, eu mei quod justo, aliquando urbanitas consectetuer ad ius. Ea sanctus lucilius mea, sea at numquam conclusionemque. Ne vim dicunt accommodare reprehendunt. Ei justo errem partiendo qui, quod labore praesent in pri. Pro utroque accumsan detracto no, et aliquid reprimique constituam quo.
+// call mixin +accordion-item("default",'heading1','accordion1',expanded,'1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore? ',"")
+mixin accordion-item-other(type,title,parent,expanded,titleContent,className,iconTitle,content)
+    -var id = title.replace(/\s+/g,"")
+    .panel(class="panel-" + type)
+        .panel-heading(role="tab", id="heading" + title)
+            h4.panel-title
+                a(data-toggle="collapse", class=className, data-parent="#" + parent, href="#collapse" + id, aria-expanded="true" ,aria-controls="collapseOne")
+                    span.icon-title
+                        img(src=iconTitle alt=altVal)
+                    span.icon-tab
+                    span.heading-tab
+                        = titleContent
+        unless className
+            .panel-collapse.collapse.show(id="collapse" + id, role="tabpanel", aria-labelledby="heading" + title, data-parent="#" + parent)
+                .panel-body
+                    .media
+                        .media-body !{content}
+                            
+        else
+            .panel-collapse.collapse.in(id="collapse" + id, role="tabpanel", aria-labelledby="heading" + title, data-parent="#" + parent)
+                .panel-body
+                    .media
+                        .media-body !{content}
+
+mixin newsItem(image,link,otherstyle)
+    .newsList__item.itemNew
+        .row
+            unless otherstyle
+                .col-6
+                    .image.effectImg
+                        a(style="background-image:url('" + image + "')" href=link)
+                            img(src=image alt=altVal)
+                .col-6
+                    .info
+                        //- .date 
+                        //-     i.fa.fa-calendar
+                        //-     | 11-09-2018
+                        a.title(href=link) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        //= title
+            else
+                .col-6
+                    .image.effectImg
+                        a(style="background-image:url('" + image + "')" href=link)
+                            img(src=image alt=altVal)
+                            i.ic-img
+                .col-6
+                    .info
+                        .date 
+                            i.fa.fa-calendar
+                            | 11-09-2018
+                        a.title(href=link) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            
+mixin newsItemSlide(image,link,otherstyle)
+    .itemNew
+        unless otherstyle
+                .image.effectImg
+                    a(style="background-image:url('" + image + "')" href=link)
+                        img(src=image alt=altVal)
+                .info
+                    .date 
+                        i.fa.fa-calendar
+                        | 11-09-2018
+                    a.title(href=link) Warburg Pincus Leads USD180 Million Series-D Round Investment in Dongjiu to Build Leading Industrial Properties and Service Provider in China
+                    //= title   
+        else
+            .image.effectImg
+                    a(style="background-image:url('" + image + "')" href=link)
+                        img(src=image alt=altVal)
+                        i.ic-img
+            .info
+                //- .date 
+                //-     i.fa.fa-calendar
+                //-     | 11-09-2018
+                a.title(href=link) Warburg Pincus Leads USD180 Million Series-D Round Investment in Dongjiu to Build Leading Industrial Properties and Service Provider in China
+
+mixin leaseItem(image,link,title)
+    .listLease__item
+        .listLease__item__image
+            .image.effectImg
+                a(style="background-image:url('" + image + "')" href=link)
+                    img(src=image alt=altVal)
+            h4 
+                = title
+        .info
+            a.title(href=link) Sed ut perspiciatis unde omnis iste natus error sit
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            .name
+                h5 Henry Hua
+                p Tel : +86 137 6101 9546
+            a.btn-link.btn-gray(href=link) 
+                | LEARN MORE 
+                i.ic-link

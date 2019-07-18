@@ -1,0 +1,54 @@
+.icon-project img {
+    width: 60px;
+}
+
+.table-box .row {
+    margin-bottom: 10px;
+}
+
+.table-box .icon-project {
+    float: left;
+    max-width: 60px;
+    padding: 4px;
+}
+
+.table-box .title-project {
+    min-width: 124px;
+    float: left;
+    padding: 4px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #184d7e;
+    margin-bottom: 0px;
+}
+
+.table-box .detail-project {
+    float: left;
+    padding: 4px;
+    padding-top: 8px;
+}
+
+table.table_pro, th, td {
+    border: 3px solid #ffffff;
+}
+
+.titleProject {
+    color: #1f4e79;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+p.titleProject {
+    margin-bottom: 0.5em;
+    margin-top: 1.3rem;
+}
+
+table.tableFaci img {
+    width: 60px;
+    float: left;
+    margin: 0.5em;
+}
+
+table.tableFaci p {
+    margin: 0.6em;
+}

@@ -1,0 +1,25 @@
+
+.footer__totop
+    i.ic-top
+    span TOP
+footer.bd-footer
+    .container
+        .row
+            .col-md-8
+                +menuNav(mainActiveFooter,mainFooter, '', 'nav-footer', 'nav-footer', '' ,'', '')
+            .col-md-4
+                .share-footer
+                    a(href="tel:0899516099").link-hotline
+                        i.fa.fa-phone
+                        | (+84) 899 516 099
+                    a(href="#")
+                        i.fa.fa-facebook
+                    a(href="#")
+                        i.fa.fa-linkedin
+                    a(href="#").showwechat
+                        i.fa.fa-weixin
+                        span.box_weChat
+                            img(src="/frontend/images/wechat.jpg" alt="")
+        .copyright
+            p Copyright © 2018 BW Industrial Development JSC. <span>All rights reserved.</span>
+// End Footer

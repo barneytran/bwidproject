@@ -1,0 +1,122 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'core';
+block content
+    +bgImg(imgDataPath + 'BWID-About-Our-Company.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%") 
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='#') Home
+                        li.breadcrumb-item
+                            a(href='#') About us 
+                        li.breadcrumb-item.active(aria-current='page') Core Management Team
+    section.mainContact
+        .container
+            h1.titleHeading(data-waypoint="100%") CORE MANAGEMENT TEAM
+            .document(data-waypoint="100%")
+                p With a best-in-class management team, sizable land holdings and a strong pipeline of future projects, BW Industrial aims to satisfy the rising demand for modern logistics warehouses, build-to-suit and ready-built factories in addition to other industrial related products across all key industrial zones, a catalyst in driving Vietnams economic growth.
+            .listTeam(data-waypoint="100%")
+                .row
+                    .col-md-6
+                        .listTeam__item
+                            div
+                                .image.effectImg
+                                    a(data-toggle="modal" data-slide="1" data-target="#teamModal" href="#" style="background-image:url('" + url + "/images/team/img1.jpg')")
+                                        img(src=imgDataPath + "team/img1.jpg" alt="")
+                            .info
+                                h4: a(data-toggle="modal" data-slide="1" data-target="#teamModal" href="#") Mr. CK Tong
+                                h5 CEO
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                a.btn-link.btn-gray(data-toggle="modal" data-slide="1" data-target="#teamModal" href="#")
+                                    | LEARN MORE
+                                    i.ic-link
+                    .col-md-6
+                        .listTeam__item
+                            div
+                                .image.effectImg
+                                    a(data-toggle="modal" data-slide="2" data-target="#teamModal" href="#" style="background-image:url('" + url + "/images/team/img2.jpg')")
+                                        img(src=imgDataPath + "team/img2.jpg" alt="")
+                            .info
+                                h4: a(data-toggle="modal" data-slide="1" data-target="#teamModal" href="#") Mr. Greg Ohan
+                                h5 Deputy CEO- Sales & Marketing
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                a.btn-link.btn-gray(data-toggle="modal" data-slide="1" data-target="#teamModal" href="#")
+                                    | LEARN MORE
+                                    i.ic-link
+                    .col-md-6
+                        .listTeam__item
+                            div
+                                .image.effectImg
+                                    a(data-toggle="modal" data-slide="3" data-target="#teamModal" href="#" style="background-image:url('" + url + "/images/team/img3.jpg')")
+                                        img(src=imgDataPath + "team/img3.jpg" alt="")
+                            .info
+                                h4: a(data-toggle="modal" data-slide="1" data-target="#teamModal" href="#") Mr. Vu Le
+                                h5 Deputy CEO-Construction
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                a.btn-link.btn-gray(data-toggle="modal" data-slide="1" data-target="#teamModal" href="#")
+                                    | LEARN MORE
+                                    i.ic-link
+                    .col-md-6
+                        .listTeam__item
+                            div
+                                .image.effectImg
+                                    a(data-toggle="modal" data-slide="4" data-target="#teamModal" href="#" style="background-image:url('" + url + "/images/team/img4.jpg')")
+                                        img(src=imgDataPath + "team/img4.jpg" alt="")
+                            .info
+                                h4: a(data-toggle="modal" data-slide="1" data-target="#teamModal" href="#") Mr. Hai Nguyen
+                                h5 CFO
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                a.btn-link.btn-gray(data-toggle="modal" data-slide="1" data-target="#teamModal" href="#")
+                                    | LEARN MORE
+                                    i.ic-link
+            #teamModal.modal.teamModal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+                .modal-dialog.modal-dialog-centered(role='document')
+                    .modal-content
+                        button.close(type='button', data-dismiss='modal', aria-label='Close').btn-close
+                            i.ic-close
+                        .modal-body
+                            .teamSlide
+                                .teamSlide__item
+                                    +bgImg(imgDataPath + 'team/img5.jpg','image')
+                                    .info
+                                        h4 Mr. CK Tong
+                                        h5 CEO
+                                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur  ipsum dolor sit amet
+                                        p Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                                .teamSlide__item
+                                    +bgImg(imgDataPath + 'team/img6.jpg','image')
+                                    .info
+                                        h4 Mr. Greg Ohan
+                                        h5 CEO
+                                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur  ipsum dolor sit amet
+                                        p Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                                .teamSlide__item
+                                    +bgImg(imgDataPath + 'team/img7.jpg','image')
+                                    .info
+                                        h4 Mr. CK Tong
+                                        h5 Deputy CEO- Sales & Marketing
+                                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur  ipsum dolor sit amet
+                                        p Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                                .teamSlide__item
+                                    +bgImg(imgDataPath + 'team/img8.jpg','image')
+                                    .info
+                                        h4 Mr. Vu Le
+                                        h5 Deputy CEO-Construction
+                                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur  ipsum dolor sit amet
+                                        p Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+
+
+
+                   
+
+        

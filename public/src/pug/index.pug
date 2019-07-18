@@ -1,0 +1,111 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+
+block content
+    include modules/_homeSlider
+    section.mainContent.mainContent--home
+        .container
+            .gridService(data-waypoint="100%")
+                .row
+                    .col-md-3.col-sm-6
+                        .gridService__item
+                            h3  Press Releases
+                            +bgImgLink(imgDataPath + 'home/press-1.jpg','image effectImg',url + 'media-center-news-detail.html')
+                            .info
+                                p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                a(href=url + "media-center-news-detail.html").btn-link.btn-gray
+                                    | LEARN MORE
+                                    i.ic-link
+                    .col-md-3.col-sm-6
+                        .gridService__item
+                            h3  Our Presence
+                            +bgImgLink(imgDataPath + 'home/presence-1.jpg','image effectImg', url + 'our-presence.html')
+                            .info
+                                p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                a(href=url + "our-presence.html").btn-link.btn-gray
+                                    | LEARN MORE
+                                    i.ic-link
+                    .col-md-3.col-sm-6
+                        .gridService__item
+                            h3  Property for Lease
+                            +bgImgLink(imgDataPath + 'home/lease-1.jpg','image effectImg', url + 'property-leasing.html')
+                            .info
+                                p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                a(href=url + 'property-leasing.html').btn-link.btn-gray
+                                    | LEARN MORE
+                                    i.ic-link
+                    .col-md-3.col-sm-6
+                        .gridService__item
+                            h3  Careers
+                            +bgImgLink(imgDataPath + 'home/career-1.jpg','image effectImg',url + 'career.html')
+                            .info
+                                p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                a(href=url + 'career.html').btn-link.btn-gray
+                                    | LEARN MORE
+                                    i.ic-link
+            .gridPartner
+                h3 Our Partner
+                .slidePartner
+                    .slidePartner__wrap
+                        div
+                            .slidePartner__item
+                                img(src=imgDataPath + 'partner/logo-01.png' alt="")
+                    .slidePartner__wrap
+                        div
+                            .slidePartner__item
+                                img(src=imgDataPath + 'partner/logo-02.png' alt="")
+                    .slidePartner__wrap
+                        div
+                            .slidePartner__item
+                                img(src=imgDataPath + 'partner/logo-03.png' alt="")
+                    .slidePartner__wrap
+                        div
+                            .slidePartner__item
+                                img(src=imgDataPath + 'partner/logo-04.png' alt="")
+                    .slidePartner__wrap
+                        div
+                            .slidePartner__item
+                                img(src=imgDataPath + 'partner/logo-05.png' alt="")
+                    .slidePartner__wrap
+                        div
+                            .slidePartner__item
+                                img(src=imgDataPath + 'partner/logo-05.png' alt="")
+                    .slidePartner__wrap
+                        div
+                            .slidePartner__item
+                                img(src=imgDataPath + 'partner/logo-05.png' alt="") 
+                    .slidePartner__wrap
+                        div
+                            .slidePartner__item
+                                img(src=imgDataPath + 'partner/logo-05.png' alt="")
+                    .slidePartner__wrap
+                        div
+                            .slidePartner__item
+                                img(src=imgDataPath + 'partner/logo-05.png' alt="") 
+                    .slidePartner__wrap
+                        div
+                            .slidePartner__item
+                                img(src=imgDataPath + 'partner/logo-05.png' alt="")
+                    .slidePartner__wrap
+                        div
+                            .slidePartner__item
+                                img(src=imgDataPath + 'partner/logo-05.png' alt="") 
+                    .slidePartner__wrap
+                        div
+                            .slidePartner__item
+                                img(src=imgDataPath + 'partner/logo-05.png' alt="")
+                    .slidePartner__wrap
+                        div
+                            .slidePartner__item
+                                img(src=imgDataPath + 'partner/logo-05.png' alt="") 
+                    .slidePartner__wrap
+                        div
+                            .slidePartner__item
+                                img(src=imgDataPath + 'partner/logo-05.png' alt="")
+                    .slidePartner__wrap
+                        div
+                            .slidePartner__item
+                                img(src=imgDataPath + 'partner/logo-05.png' alt="")   
+                        

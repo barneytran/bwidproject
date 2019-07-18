@@ -1,0 +1,51 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'career-1';
+block content
+    +bgImg(imgDataPath + 'career/bg-career-model.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='/') Careers  
+                        li.breadcrumb-item.active(aria-current='page') BW Industrial culture
+    section.ourCareer
+        .container
+            h1.titleHeading(data-waypoint="100%") BW Industrial culture
+            .document.mediaEffect(data-waypoint="100%")
+                h3 “Work Hard, Play Harder” 
+                p At the core of our success with our team is a simple philosophy; our people are the most important asset that we have.<br/>We respect the need for career development and planning of our people and provide them with a variety of effective training opportunities, giving them a chance to maximize their strengths and capabilities. We also endeavor to create a warm and positive working environment, organize various team building activities and foster an optimistic attitude towards work and life
+            .slideDetail.slideDetail--content.mediaEffect-2(data-waypoint="100%")
+                .bigImgContent
+                    .bigImgContent__item
+                            +bgImg(imgDataPath + 'news/big.jpg','image effectImg')
+                    .bigImgContent__item
+                        +bgImg(imgDataPath + 'news/big.jpg','image effectImg')   
+                    .bigImgContent__item
+                        +bgImg(imgDataPath + 'news/big.jpg','image effectImg')   
+                    .bigImgContent__item
+                        +bgImg(imgDataPath + 'news/big.jpg','image effectImg')   
+                    .bigImgContent__item
+                        +bgImg(imgDataPath + 'news/big.jpg','image effectImg')   
+                    .bigImgContent__item
+                        +bgImg(imgDataPath + 'news/big.jpg','image effectImg')   
+                .navImgContent
+                    .navImgContent__item  
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    .navImgContent__item  
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    .navImgContent__item  
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    .navImgContent__item  
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    .navImgContent__item  
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    .navImgContent__item  
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit

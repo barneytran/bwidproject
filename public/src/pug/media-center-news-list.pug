@@ -1,0 +1,49 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'News-1';
+block content
+    +bgImg(imgDataPath + 'news/media-center-news.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='#') Media Center 
+                        li.breadcrumb-item
+                            a(href='#') News  
+                        li.breadcrumb-item
+                            a(href='#') BW Industrial News 
+                        li.breadcrumb-item.active(aria-current='page') Activities of BW Industrial
+    section.ourNewsList#industrialNews
+        .container
+            h1.titleHeading(data-waypoint="100%") BW Industrial News
+            .gridNews--2
+                ul.navLink#navTop.mediaEffect(data-waypoint="100%")
+                    li.active: a(href=url +"media-center-news-list.html#industrialNews") Activities of BW Industrial
+                    li: a(href=url +"media-center-news-list-2.html#investorNews") Activities of Investors
+                .row.mediaEffect-2(data-waypoint="100%")
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img8.jpg',url + 'media-center-news-detail.html')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img9.jpg',url + 'media-center-news-detail.html')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img10.jpg',url + 'media-center-news-detail.html')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img11.jpg',url + 'media-center-news-detail.html')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img12.jpg',url + 'media-center-news-detail.html')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img13.jpg',url + 'media-center-news-detail.html')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img14.jpg',url + 'media-center-news-detail.html')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img15.jpg',url + 'media-center-news-detail.html')
+                    .col-md-4.col-6.break360
+                        +newsItemSlide(imgDataPath + 'news/img16.jpg',url + 'media-center-news-detail.html')
+            include modules/_pagination

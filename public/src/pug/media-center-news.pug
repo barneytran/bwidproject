@@ -1,0 +1,72 @@
+extends layouts/_layout_default
+
+block title 
+    title BW Industrial Development JSC
+    - var mainActive = 'media';
+block content
+    +bgImg(imgDataPath + 'news/media-center.jpg','bgBanner')
+    section.mainBeardcrumb(data-waypoint="100%")
+        .container
+            .row.align-items-center
+                .col-12.align-self-center
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            i.ic_home
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='#') Media Center 
+                        li.breadcrumb-item.active(aria-current='page') News
+    section.ourNews
+        .container
+            h1.titleHeading(data-waypoint="100%") News
+            .gridNews.mediaEffect(data-waypoint="100%")
+                .titleHeading--news Latest News
+                .row
+                    .col-md-6
+                        .gridNews__big.itemNew
+                            +bgImgLink(imgDataPath + 'news/img1.jpg','image effectImg',url + 'media-center-news-detail.html')
+                            .info
+                                .date 
+                                    i.fa.fa-calendar
+                                    | 11-09-2018
+                                a.title(href="media-center-news-detail.html") Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                                a.btn-link.btn-gray(href="media-center-news-detail.html")
+                                    | View more
+                                    i.ic-link
+                    .col-md-6
+                        .newsList
+                            +newsItem(imgDataPath + 'news/img2.jpg',url + 'media-center-news-detail.html')
+                            +newsItem(imgDataPath + 'news/img3.jpg',url + 'media-center-news-detail.html')
+                            +newsItem(imgDataPath + 'news/img4.jpg',url + 'media-center-news-detail.html')
+    section.ourNews--2.mediaEffect-2(data-waypoint="100%")
+        .container
+            .row
+                .col-sm-9
+                    .titleHeading--news News for Investor
+                .col-sm-3.titleHeading--link
+                    a(href="media-center-news-list-2.html").btn-view
+                        i.fa.fa-bars
+                        | View all
+            .gridNews--2.slideNews   
+                +newsItemSlide(imgDataPath + 'news/img7.jpg',url + 'media-center-news-detail.html')
+                +newsItemSlide(imgDataPath + 'news/img9.jpg',url + 'media-center-news-detail.html')
+                +newsItemSlide(imgDataPath + 'news/img10.jpg',url + 'media-center-news-detail.html')
+                +newsItemSlide(imgDataPath + 'news/img8.jpg',url + 'media-center-news-detail.html')
+                +newsItemSlide(imgDataPath + 'news/img9.jpg',url + 'media-center-news-detail.html')
+                +newsItemSlide(imgDataPath + 'news/img10.jpg',url + 'media-center-news-detail.html')
+    section.ourNews--3.mediaEffect-3(data-waypoint="100%")
+        .container
+            .row
+                .col-sm-9
+                    .titleHeading--news BW Industrial News
+                .col-sm-3.titleHeading--link
+                    a(href="media-center-news-list.html").btn-view
+                        i.fa.fa-bars
+                        | View all
+            .gridNews--2.slideNews   
+                +newsItemSlide(imgDataPath + 'news/img7.jpg',url + 'media-center-news-detail.html')
+                +newsItemSlide(imgDataPath + 'news/img9.jpg',url + 'media-center-news-detail.html')
+                +newsItemSlide(imgDataPath + 'news/img10.jpg',url + 'media-center-news-detail.html')
+                +newsItemSlide(imgDataPath + 'news/img8.jpg',url + 'media-center-news-detail.html')
+                +newsItemSlide(imgDataPath + 'news/img9.jpg',url + 'media-center-news-detail.html')
+                +newsItemSlide(imgDataPath + 'news/img10.jpg',url + 'media-center-news-detail.html')

@@ -1,0 +1,65 @@
+$bg-pagination: #f5f5f5;
+$bg-pagination-active: #00a8df;
+
+.pagination{
+    .page-item{
+        &:first-child{
+            .page-link{
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                margin-right: rem(3);
+                &:hover{
+                    background-color: $bg-pagination;
+                }
+            }
+        }
+        &:last-child{
+            .page-link{
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                margin-left: rem(2);
+                &:hover{
+                    background-color: $bg-pagination;
+                }
+            }
+        }
+        &.active{
+            .page-link{
+                background-color: $bg-pagination-active;
+                color: #ffffff;
+            }
+        }
+        .page-link{
+            font-family: "Futura";
+            font-weight: 800;
+            width: rem(40);
+            height: rem(40);
+            line-height: (40/16);
+            text-align: center;
+            padding: 0;
+            border: 0;
+            color: #393939;
+            background-color: $bg-pagination;
+            &:focus{
+                outline: none;
+                box-shadow: none;
+            }
+            &:hover{
+                background-color: $bg-pagination-active;
+                color: #ffffff;
+                .ic-link--pagi{
+                    &::before{
+                        left: 0;
+                    }
+                    &::after{
+                        right: -30px;
+                    }
+                }
+            }
+        }
+    }
+    &--2{
+        padding-top: rem(35);
+        margin-bottom: rem(10);
+    }
+}

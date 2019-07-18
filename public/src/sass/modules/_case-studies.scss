@@ -1,0 +1,75 @@
+.sliderCase {
+    margin-bottom: rem(40);
+    @include media-breakpoint-down(md){  margin-bottom: rem(20);}
+
+    .arrow--3 {
+        width: rem(45);
+        height: rem(84);
+        top: 50%;
+        margin-top: rem(-42);
+        i {
+            height: rem(40);
+            width: rem(44);
+            margin: 0 auto;
+            top: 50%;
+            left: 50%;
+            margin-left: rem(-22);
+            margin-top: rem(-20);
+            position: absolute;
+            background-size: contain;
+            background-size: contain !important;
+            background-position: center !important;
+        }
+        &:hover {
+            i {
+                &.ic-right {
+                    background: url($image-path + "icons/ic-right-1.svg") no-repeat;
+                }
+                &.ic-lef {
+                    background: url($image-path + "icons/ic-left-1.svg") no-repeat;
+                }
+            }
+        }
+        @include media-breakpoint-down(sm){
+          width: rem(35);
+          height: rem(60); 
+          margin-top: rem(-30);
+        }
+    }
+    &__item {
+        padding: rem(7);
+        background: rgba(#fff, 0);
+        box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0);
+        transform: scale(1);
+        opacity: 0.2;
+        transition: all 0.6s ease-in-out;
+        .image {
+            //width:680px;
+            margin: 0 auto;
+            @include bg-box(680, 400); // transition: all 0.6s ease-in-out;
+        }
+    }
+    .slick-slide {
+        >div {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            @include media-breakpoint-down(md) {   padding-top: 20px;
+                padding-bottom: 20px;}
+        }
+        &.slick-center {
+            .sliderCase__item {
+                background: rgba(#fff, 1);
+                box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.15);
+                opacity: 1;
+               
+                position: relative;
+                z-index: 99;
+                @include media-breakpoint-up(sm){ transform: scale(1.2);}
+                .image {}
+            }
+        }
+    }
+    ul.slick-dots{
+        @include media-breakpoint-down(md) {  bottom:0;}
+    }
+}
