@@ -82,7 +82,9 @@ class UserController extends Controller
     {
         $input = $request->all();
 
-        $this->user->store($input);
+        $user_id = $this->user->store($input);
+
+        activity('Create User')->log(\Auth::user()->name.'('.\Auth::user()->email.') created user "'.$input['email'].'" (id: '.$user_id->id.')');
 
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_user.user')]));
 
@@ -148,6 +150,8 @@ class UserController extends Controller
 
         $this->user->update($input, $id);
 
+        activity('Update User')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated user "'.$input['email'].'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.updated_successful', ['attr' => trans('admin_user.user')]));
 
         return redirect()->back();
@@ -161,7 +165,13 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        $info_user = $this->user->find($id);
+
+        $title = $info_user->email;
+
         $this->user->delete($id);
+
+        activity('Delete User')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted user "'.$title.'" (id: '.$id.')');
 
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_user.user')]));
 

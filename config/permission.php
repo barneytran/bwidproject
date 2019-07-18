@@ -279,6 +279,13 @@ return [
         ]
     ],
 
+    'activity' => [
+        'model' => 'Hoạt động',
+        'permissions' => [
+            'admin.activity.index' => 'Truy cập',
+        ]
+    ],
+
     'gallery' => [
         'model' => 'Thư viện ảnh/video',
         'permissions' => [

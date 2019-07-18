@@ -104,7 +104,11 @@ class PageController extends Controller
     {
         $input = $request->all();
 
-        $this->page->create($input);
+        $page_id = $this->page->create($input);
+
+        $locale = \App::getLocale();
+
+        activity('Create Page')->log(\Auth::user()->name.'('.\Auth::user()->email.') created page "'.$input[$locale]['title'].'" (id: '.$page_id->id.')');
 
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_page.page')]));
 
@@ -173,6 +177,10 @@ class PageController extends Controller
 
         $this->page->update($input, $id);
 
+        $locale = \App::getLocale();
+
+        activity('Updae Page')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated page "'.$input[$locale]['title'].'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.updated_successful', ['attr' => trans('admin_page.page')]));
 
         return redirect()->back();
@@ -186,7 +194,13 @@ class PageController extends Controller
      */
     public function destroy($id)
     {
+        $info_page = $this->page->find($id);
+
+        $title = $info_page->title;
+
         $this->page->delete($id);
+
+        activity('Delete Page')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted page "'.$title.'" (id: '.$id.')');
 
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_page.page')]));
 

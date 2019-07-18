@@ -76,6 +76,8 @@ Route::group(
 
                 resourceAdmin('users', 'UserController', 'user');
 
+                resourceAdmin('activity', 'ActivityController', 'activity');
+
                 resourceAdmin('roles', 'RoleController', 'role');
 
                 resourceAdmin('system', 'SystemController', 'system', 'system', ['show', 'index', 'create', 'destroy']);

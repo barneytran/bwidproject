@@ -107,7 +107,11 @@ class NewsController extends Controller
     {
         $input = $request->all();
 
-        $this->news->create($input);
+        $news_id = $this->news->create($input);
+
+        $locale = \App::getLocale();
+
+        activity('Create News')->log(\Auth::user()->name.'('.\Auth::user()->email.') created news "'.$input[$locale]['title'].'" (id: '.$news_id->id.')');
 
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_news.news')]));
 
@@ -157,6 +161,10 @@ class NewsController extends Controller
 
         $this->news->update($input, $id);
 
+        $locale = \App::getLocale();
+
+        activity('Update News')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated news "'.$input[$locale]['title'].'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.updated_successful', ['attr' => trans('admin_news.news')]));
 
         return redirect()->back();
@@ -170,7 +178,13 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
+        $info_news = $this->news->find($id);
+
+        $title = $info_news->title;
+
         $this->news->delete($id);
+
+        activity('Delete News')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted news "'.$title.'" (id: '.$id.')');
 
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_news.news')]));
 

@@ -28,9 +28,7 @@ class BranchController extends Controller
     {
         Breadcrumb::title(trans('admin_branch.title'));
 
-        return view('admin.branch.index', compact(
-            'cities'
-        ));
+        return view('admin.branch.index');
     }
 
     public function datatable()
@@ -95,7 +93,11 @@ class BranchController extends Controller
     {
         $input = $request->all();
 
-        $this->branch->store($input);
+        $branch_id = $this->branch->store($input);
+
+        $locale = \App::getLocale();
+
+        activity('Create Branch')->log(\Auth::user()->name.'('.\Auth::user()->email.') created branch "'.$input[$locale]['name'].'" (id: '.$branch_id->id.')');
 
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_branch.branch')]));
 
@@ -152,6 +154,10 @@ class BranchController extends Controller
 
         $this->branch->update($input, $id);
 
+        $locale = \App::getLocale();
+
+        activity('Update Branch')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated branch "'.$input[$locale]['name'].'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.updated_successful', ['attr' => trans('admin_branch.branch')]));
 
         return redirect()->back();
@@ -165,7 +171,14 @@ class BranchController extends Controller
      */
     public function destroy($id)
     {
+        $info_branch = $this->branch->find($id);
+
+        $title = $info_branch->name;
+
         $this->branch->destroy($id);
+
+        activity('Delete Branch')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted branch "'.$title.'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_branch.branch')]));
         return redirect()->back();
     }

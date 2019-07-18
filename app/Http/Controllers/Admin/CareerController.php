@@ -161,7 +161,11 @@ class CareerController extends Controller
     {
         $input = $request->all();
 
-        $this->career->create($input);
+        $career_id = $this->career->create($input);
+
+        $locale = \App::getLocale();
+
+        activity('Create Career')->log(\Auth::user()->name.'('.\Auth::user()->email.') created career "'.$input[$locale]['name'].'" (id: '.$career_id->id.')');
 
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_career.career')]));
 
@@ -218,6 +222,10 @@ class CareerController extends Controller
 
         $this->career->update($input, $id);
 
+        $locale = \App::getLocale();
+
+        activity('Update Career')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated career "'.$input[$locale]['name'].'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.updated_successful', ['attr' => trans('admin_career.career')]));
 
         return redirect()->back();
@@ -231,7 +239,13 @@ class CareerController extends Controller
      */
     public function destroy($id)
     {
+        $info_career = $this->career->find($id);
+
+        $title = $info_career->name;
+
         $this->career->delete($id);
+
+        activity('Delete Career')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted career "'.$title.'" (id: '.$id.')');
 
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_career.career')]));
 

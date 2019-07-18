@@ -79,7 +79,11 @@ class NewsCategoryController extends Controller
     {
         $input = $request->all();
 
-        $this->news_category->create($input);
+        $news_category_id = $this->news_category->create($input);
+
+        $locale = \App::getLocale();
+
+        activity('Create News Category')->log(\Auth::user()->name.'('.\Auth::user()->email.') created news category "'.$input[$locale]['name'].'" (id: '.$news_category_id->id.')');
 
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_news_category.news_category')]));
 
@@ -132,6 +136,10 @@ class NewsCategoryController extends Controller
 
         $this->news_category->update($input, $id);
 
+        $locale = \App::getLocale();
+
+        activity('Update News Category')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated news category "'.$input[$locale]['name'].'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.updated_successful', ['attr' => trans('admin_news_category.news_category')]));
 
         return redirect()->back();
@@ -145,7 +153,13 @@ class NewsCategoryController extends Controller
      */
     public function destroy($id)
     {
+        $info_news_category = $this->news_category->find($id);
+
+        $title = $info_news_category->name;
+
         $this->news_category->delete($id);
+
+        activity('Delete News Category')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted news category"'.$title.'" (id: '.$id.')');
 
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_news_category.news_category')]));
 

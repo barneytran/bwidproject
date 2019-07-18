@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
         $user = str_slug($user);
         \Log::getMonolog()->popHandler();
         \Log::useDailyFiles(storage_path('/logs/laravel-') . $user . '.log');
-		\URL::forceScheme('https');
+		\URL::forceScheme('http');
 
         // Remove cache after delete or update
         Page::observe(PageObserver::class);

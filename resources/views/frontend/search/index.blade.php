@@ -16,7 +16,7 @@
                     <form class="searchHeading__form" action="{{route('page.search')}}" method="get">
                         <p class="searchHeading__form__text">{{trans('frontend.search_for')}}</p>
                         <div class="form-group"><i class="ic_search"></i>
-                            <input class="form-control" title="{{trans('frontend.search')}}" type="text" name="q" value="{{request()->get('q')}}">
+                            <input class="form-control" title="{{trans('frontend.search')}}" type="text" name="q" value="{{ strip_tags(request()->get('q')) }}">
                             <button class="btnRemove" type="button"><i class="ic_close"></i></button>
                         </div>
                     </form>
@@ -28,7 +28,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 offset-md-1 col-12">
-                    <p class="searchResult__text">{{trans('frontend.search_result_for')}} <span class="searchResult__text__color">“{{request()->get('q')}}”</span></p>
+                    <p class="searchResult__text">{{trans('frontend.search_result_for')}} <span class="searchResult__text__color">“{{ strip_tags(request()->get('q')) }}”</span></p>
                     <div class="row">
                         <div class="col-lg-2">
                             <div class="searchResult__item" onclick="location.href='{{route('page.search',['q'=>request()->get('q'),'type'=>0])}}'"><a href="#"></a><span class="searchResult__item__text">{{trans('frontend.all')}}</span><span class="searchResult__item__number">{{$pages['total'] ?? 0}}</span></div>

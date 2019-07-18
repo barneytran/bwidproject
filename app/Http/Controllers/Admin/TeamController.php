@@ -85,7 +85,11 @@ class TeamController extends Controller
     {
         $input = $request->all();
 
-        $this->team->create($input);
+        $team_id = $this->team->create($input);
+
+        $locale = \App::getLocale();
+
+        activity('Create Team')->log(\Auth::user()->name.'('.\Auth::user()->email.') created team "'.$input[$locale]['name'].'" (id: '.$team_id->id.')');
 
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_team.team')]));
         return redirect()->route('admin.team.index');
@@ -129,6 +133,10 @@ class TeamController extends Controller
 
         $this->team->update($input, $id);
 
+        $locale = \App::getLocale();
+
+        activity('Update Team')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated team "'.$input[$locale]['name'].'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.updated_successful', ['attr' => trans('admin_team.team')]));
 
         return redirect()->back();
@@ -142,7 +150,13 @@ class TeamController extends Controller
      */
     public function destroy($id)
     {
+        $info_team = $this->team->find($id);
+
+        $title = $info_team->name;
+
         $this->team->delete($id);
+
+        activity('Delete Team')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted team "'.$title.'" (id: '.$id.')');
 
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_team.team')]));
 

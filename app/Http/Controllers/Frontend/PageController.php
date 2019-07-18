@@ -392,7 +392,7 @@ class PageController extends Controller
 
     public function getSearch(Request $request)
     {
-        $q = $request->get('q');
+        $q = strip_tags($request->get('q'));
         $type = intval($request->get('type',0));
         $collects = collect();
 

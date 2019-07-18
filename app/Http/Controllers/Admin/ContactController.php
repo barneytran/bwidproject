@@ -52,7 +52,14 @@ class ContactController extends Controller
     public function destroy($id)
     {
         $contact = $this->contact->find($id);
+
+        $title = $contact->subject;
+
+        $info = $title.' - '.$contact->name.' ('.$contact->email.')';
+
         $contact->delete();
+
+        activity('Delete Contact')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted contact "'.$info.'" (id: '.$id.')');
 
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_contact.contact')]));
 

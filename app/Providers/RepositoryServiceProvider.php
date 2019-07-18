@@ -61,6 +61,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(\App\Repositories\ImageMapRepository::class, \App\Repositories\ImageMapRepositoryEloquent::class);
 
         $this->app->bind(\App\Repositories\ServiceRepository::class, \App\Repositories\ServiceRepositoryEloquent::class);
+        $this->app->bind(\App\Repositories\ActivityRepository::class, \App\Repositories\ActivityRepositoryEloquent::class);
         //:end-bindings:
     }
 }

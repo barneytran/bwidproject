@@ -7,7 +7,9 @@
         }
     </style>
 @endsection
-
+@section('meta-title')
+    <title>{{trans('frontend.property_for_lease')}}</title>
+@endsection
 @section('content')
     @include('themes.partials.base',['banner'=>'images/business-model/bg-business-model.jpg'])
     <section class="ourLeasing">

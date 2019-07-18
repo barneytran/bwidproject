@@ -73,7 +73,11 @@ class CareerCategoryController extends Controller
     {
         $input = $request->all();
 
-        $this->career_category->create($input);
+        $career_category_id = $this->career_category->create($input);
+
+        $locale = \App::getLocale();
+
+        activity('Create Department')->log(\Auth::user()->name.'('.\Auth::user()->email.') created career category "'.$input[$locale]['name'].'" (id: '.$career_category_id->id.')');
 
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_career_category.career_category')]));
 
@@ -124,6 +128,10 @@ class CareerCategoryController extends Controller
 
         $this->career_category->update($input, $id);
 
+        $locale = \App::getLocale();
+
+        activity('Update Department')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated career category "'.$input[$locale]['name'].'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.updated_successful', ['attr' => trans('admin_career_category.career_category')]));
 
         return redirect()->back();
@@ -137,7 +145,13 @@ class CareerCategoryController extends Controller
      */
     public function destroy($id)
     {
+        $info_career_category = $this->career_category->find($id);
+
+        $title = $info_career_category->name;
+
         $this->career_category->delete($id);
+
+        activity('Delete Department')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted career category "'.$title.'" (id: '.$id.')');
 
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_career_category.career_category')]));
 

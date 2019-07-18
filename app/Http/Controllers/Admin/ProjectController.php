@@ -88,7 +88,14 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $this->project->create($request->input());
+        $input = $request->all();
+
+        $project_id = $this->project->create($request->input());
+
+        $locale = \App::getLocale();
+
+        activity('Create Project')->log(\Auth::user()->name.'('.\Auth::user()->email.') created project "'.$input[$locale]['name'].'" (id: '.$project_id->id.')');
+
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_project.title')]));
         return redirect()->route('admin.project.index');
     }
@@ -128,7 +135,14 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $input = $request->all();
+
         $this->project->update($request->input(), $id);
+
+        $locale = \App::getLocale();
+
+        activity('Update Project')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated project "'.$input[$locale]['name'].'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.updated_successful', ['attr' => trans('admin_project.title')]));
         return redirect()->back();
     }
@@ -141,7 +155,14 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
+        $info_project = $this->project->find($id);
+
+        $title = $info_project->name;
+
         $this->project->delete($id);
+
+        activity('Delete Project')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted project "'.$title.'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_project.title')]));
         return redirect()->route('admin.project.index');
     }

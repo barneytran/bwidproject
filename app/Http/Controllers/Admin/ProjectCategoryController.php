@@ -71,7 +71,14 @@ class ProjectCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->category->create($request->input());
+        $input = $request->all();
+
+        $project_category_id = $this->category->create($request->input());
+
+        $locale = \App::getLocale();
+
+        activity('Create Project Category')->log(\Auth::user()->name.'('.\Auth::user()->email.') created project category "'.$input[$locale]['name'].'" (id: '.$project_category_id->id.')');
+
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_project_category.title')]));
         return redirect()->route('admin.project_category.index');
     }
@@ -110,7 +117,14 @@ class ProjectCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $input = $request->all();
+
         $this->category->update($request->input(), $id);
+
+        $locale = \App::getLocale();
+
+        activity('Update Project Category')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated project category "'.$input[$locale]['name'].'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.updated_successful', ['attr' => trans('admin_project_category.title')]));
         return redirect()->back();
     }
@@ -123,7 +137,14 @@ class ProjectCategoryController extends Controller
      */
     public function destroy($id)
     {
+        $info_project_category = $this->category->find($id);
+
+        $title = $info_project_category->name;
+
         $this->category->delete($id);
+
+        activity('Delete Project Category')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted project category"'.$title.'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_project_category.title')]));
         return redirect()->route('admin.project_category.index');
     }

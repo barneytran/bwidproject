@@ -457,6 +457,15 @@
                 @endif
                 <li class="header"></li>
 
+                @if(in_array('admin.activity.index', $composer_auth_permissions))
+                    <li class="{!! currentPageMenu(["*admin/activity*"]) !!}">
+                        <a href="{!! route("admin.activity.index") !!}">
+                             <i class="material-icons">settings</i>
+                            <span>{!! trans("admin_menu.activity") !!}</span>
+                        </a>
+                    </li>
+                @endif
+
                 @if(in_array('admin.user.index', $composer_auth_permissions))
                     <li class="{!! currentPageMenu(["*admin/users*", '*admin/roles*']) !!}">
                         <a href="javascript:void(0);" class="menu-toggle">

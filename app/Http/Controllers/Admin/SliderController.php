@@ -74,7 +74,11 @@ class SliderController extends Controller
     {
         $input = $request->all();
 
-        $this->slider->create($input);
+        $slider_id = $this->slider->create($input);
+
+        $locale = \App::getLocale();
+
+        activity('Create Slider')->log(\Auth::user()->name.'('.\Auth::user()->email.') created slider "'.$input[$locale]['name'].'" (id: '.$slider_id->id.')');
 
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_slider.slider')]));
 
@@ -124,6 +128,10 @@ class SliderController extends Controller
 
         $this->slider->update($input, $id);
 
+        $locale = \App::getLocale();
+
+        activity('Update Slider')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated slider "'.$input[$locale]['name'].'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.updated_successful', ['attr' => trans('admin_slider.slider')]));
 
         return redirect()->back();
@@ -137,7 +145,13 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
+        $info_slider = $this->slider->find($id);
+
+        $title = $info_slider->name;
+
         $this->slider->delete($id);
+
+        activity('Delete Slider')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted slider "'.$title.'" (id: '.$id.')');
 
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_slider.slider')]));
 

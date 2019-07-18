@@ -70,5 +70,6 @@ return [
 
     'projects'=>'Projects',
     'project_list'=>'Projects list',
-    'project_category_list'=>'Project categories'
+    'project_category_list'=>'Project categories',
+    'activity' => 'Activity'
 ];

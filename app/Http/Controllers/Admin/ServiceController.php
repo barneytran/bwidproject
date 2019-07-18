@@ -70,7 +70,7 @@ class ServiceController extends Controller
     {
         Breadcrumb::title(trans('admin_service.create'));
 
-        return view('admin.service.create_edit', compact('categories'));
+        return view('admin.service.create_edit');
     }
 
     /**
@@ -83,7 +83,11 @@ class ServiceController extends Controller
     {
         $input = $request->all();
 
-        $this->service->create($input);
+        $service_id = $this->service->create($input);
+
+        $locale = \App::getLocale();
+
+        activity('Create Service')->log(\Auth::user()->name.'('.\Auth::user()->email.') created service "'.$input[$locale]['title'].'" (id: '.$service_id->id.')');
 
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_service.service')]));
 
@@ -115,7 +119,7 @@ class ServiceController extends Controller
 
         $metadata = $service->meta;
 
-        return view('admin.service.create_edit', compact('service', 'categories', 'metadata'));
+        return view('admin.service.create_edit', compact('service', 'metadata'));
     }
 
     /**
@@ -131,6 +135,10 @@ class ServiceController extends Controller
 
         $this->service->update($input, $id);
 
+        $locale = \App::getLocale();
+
+        activity('Update Service')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated service "'.$input[$locale]['title'].'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.updated_successful', ['attr' => trans('admin_service.service')]));
 
         return redirect()->back();
@@ -144,7 +152,13 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
+        $info_service = $this->service->find($id);
+
+        $title = $info_service->title;
+
         $this->service->delete($id);
+
+        activity('Delete Service')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted service "'.$title.'" (id: '.$id.')');
 
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_service.service')]));
 

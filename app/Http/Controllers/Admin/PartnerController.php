@@ -82,7 +82,11 @@ class PartnerController extends Controller
     {
         $input = $request->all();
 
-        $this->partner->create($input);
+        $partner_id = $this->partner->create($input);
+
+        $locale = \App::getLocale();
+
+        activity('Create Customer')->log(\Auth::user()->name.'('.\Auth::user()->email.') created customer "'.$input[$locale]['name'].'" (id: '.$partner_id->id.')');
 
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_partner.partner')]));
         Cache::clear();
@@ -128,6 +132,10 @@ class PartnerController extends Controller
 
         $this->partner->update($input, $id);
 
+        $locale = \App::getLocale();
+
+        activity('Update Customer')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated customer "'.$input[$locale]['name'].'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.updated_successful', ['attr' => trans('admin_partner.partner')]));
         Cache::clear();
         return redirect()->back();
@@ -141,7 +149,13 @@ class PartnerController extends Controller
      */
     public function destroy($id)
     {
+        $info_customer = $this->partner->find($id);
+
+        $title = $info_customer->name;
+
         $this->partner->delete($id);
+
+        activity('Delete Customer')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted customer "'.$title.'" (id: '.$id.')');
 
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_partner.partner')]));
 

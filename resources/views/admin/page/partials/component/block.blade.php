@@ -119,13 +119,22 @@
         @endif
 
         @if(in_array('TYPE_MULTI_PHOTOS', $types))
-            <h4 class="m-t-0">{{ trans('admin_page_block.form.photos') }}</h4>
-            <ul id="{{ str_slug($name, '') }}-photos" class="list-photos">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <div class="font-bold col-green">{{ trans('admin_page_block.form.html') }}</div>
+                    <iframe src="{{ !empty($default_block) ? $default_block->html : null, }}" frameborder="0"></iframe>
+                </div>
+            </div>
+        @endif
+
+        @if(in_array('TYPE_HTML', $types))
+            <h4 class="m-t-0">{{ trans('admin_page_block.form.html') }}</h4>
+            <ul id="{{ str_slug($name, '') }}-html" class="list-html">
                 @if(!empty($default_block))
                     @foreach($default_block->medias as $media)
                         <li data-id="{{ $media->id }}">
                             <div class="box-image">
-                                <img src="{{ $media->path }}">
+                                <iframe src="{{ $media->path }}">
                                 <button type="button" class="btn_delete_this" data-parent="li" data-multi="1"
                                         data-name="{{ $name }}[delete_photos][]" data-value="{{ $media->id }}">
                                     <i class="glyphicon glyphicon-remove"></i>

@@ -55,7 +55,11 @@ class GalleryController extends Controller
     {
         $input = $request->all();
 
-        $this->gallery->create($input);
+        $gallery_id = $this->gallery->create($input);
+
+        $locale = \App::getLocale();
+
+        activity('Create Gallery')->log(\Auth::user()->name.'('.\Auth::user()->email.') created '.$input['type'].' gallery "'.$input[$locale]['name'].'" (id: '.$gallery_id->id.')');
 
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_gallery.gallery')]));
 
@@ -139,6 +143,10 @@ class GalleryController extends Controller
 
         $this->gallery->update($input, $id);
 
+        $locale = \App::getLocale();
+
+        activity('Update Gallery')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated '.$input['type'].' gallery "'.$input[$locale]['name'].'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.updated_successful', ['attr' => trans('admin_gallery.gallery')]));
 
         return redirect()->back();
@@ -152,7 +160,15 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
+        $info_gallery = $this->gallery->find($id);
+
+        $title = $info_gallery->name;
+
+        $type = $info_gallery->type;
+
         $this->gallery->delete($id);
+
+        activity('Delete Gallery')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted '.$type.' gallery "'.$title.'" (id: '.$id.')');
 
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_gallery.gallery')]));
 

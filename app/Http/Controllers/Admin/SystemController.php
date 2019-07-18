@@ -32,6 +32,8 @@ class SystemController extends Controller
 
         $this->system->update($input, $id);
 
+        activity('Update System')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated system');
+
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_system.system')]));
 
         return redirect()->route('admin.system.edit', '011089');

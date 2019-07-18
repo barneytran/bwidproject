@@ -78,7 +78,9 @@ class RoleController extends Controller
     {
         $input = $request->all();
 
-        $this->role->store($input);
+        $role_id = $this->role->store($input);
+
+        activity('Create Role')->log(\Auth::user()->name.'('.\Auth::user()->email.') created role "'.$input['name'].'" (id: '.$role_id->id.')');
 
         session()->flash('success', trans('admin_message.created_successful', ['attr' => trans('admin_role.role')]));
 
@@ -141,6 +143,8 @@ class RoleController extends Controller
 
         $this->role->update($input, $id);
 
+        activity('Update Role')->log(\Auth::user()->name.'('.\Auth::user()->email.') updated role "'.$input['name'].'" (id: '.$id.')');
+
         session()->flash('success', trans('admin_message.updated_successful', ['attr' => trans('admin_role.role')]));
 
         return redirect()->back();
@@ -154,7 +158,13 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
+        $info_role = $this->role->find($id);
+
+        $title = $info_role->name;
+
         $this->role->delete($id);
+
+        activity('Delete Role')->log(\Auth::user()->name.'('.\Auth::user()->email.') deleted role "'.$title.'" (id: '.$id.')');
 
         session()->flash('success', trans('admin_message.deleted_successful', ['attr' => trans('admin_role.role')]));
 
